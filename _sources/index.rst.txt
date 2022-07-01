@@ -1,0 +1,151 @@
+.. Linux documentation master file, created by
+   sphinx-quickstart on Wed Aug 11 21:35:25 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Linux's documentation!
+=================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: System:
+
+   /source/system/unix
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: OS:
+
+   /source/os/ubuntu
+   /source/os/centos
+   /source/os/archlinux
+   /source/os/kalilinux
+   /source/os/redhat
+   /source/os/suselinux
+   /source/os/solaris
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Network:
+
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Main:
+   
+   /source/main
+   /source/selinux
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Development:
+
+   /source/python
+   /source/c
+   /source/go
+
+.. toctree::
+   :maxdepth: 2
+   :caption: MW:
+   
+   /source/link
+   /source/squid
+   /source/apache
+   /source/nginx
+   /source/litespeed
+   /source/tomcat
+   /source/splunk
+   /source/zabbix
+   /source/nagios
+   /source/redmine
+   /source/bind
+   /source/samba
+   /source/bacula
+   /source/snort
+   /source/mail/postfix
+   /source/mail/sendmail
+   /source/keepalive
+   /source/pacemaker
+   /source/corosync
+   /source/drdb
+   /source/haproxy
+   /source/openvpn
+   /source/openam
+   /source/keycloak
+   /source/elasticsearch
+   /source/kibana
+   /source/openldap
+   /source/kafka
+   /source/logstash
+   /source/fluentd 
+   /source/apache_hadoop
+   /source/apache_spark
+   /source/openshift
+   /source/sphinx
+   /source/ansible
+   /source/puppet
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Database:
+   
+   /source/database/mysql
+   /source/database/maria
+   /source/database/mongo
+   /source/database/postgresql
+   /source/database/oracle
+   /source/database/cassandra
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Cloud:
+
+   /source/cloud/index
+   /source/cloud/aspire
+   /source/cloud/aws
+   /source/cloud/gcp
+   /source/cloud/azure
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Virtualization:
+   
+   /source/virtualization/index
+   /source/virtualization/vagrant
+   /source/virtualization/virtualbox
+   /source/virtualization/kvm
+   /source/virtualization/xen
+   /source/virtualization/hyper-v
+   /source/virtualization/esxi
+   /source/virtualization/docker
+   /source/virtualization/kubernetes
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Framework:
+
+   /source/framework/django
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Other:
+
+   /source/git
+   /source/gitlab
+
+.. toctree::
+   :maxdepth: 2
+   :caption: TextEditor:
+
+   /source/texteditor/vim
+   /source/texteditor/emacs
+   /source/texteditor/sakura
+   /source/texteditor/vscode
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

@@ -1,0 +1,156 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>memo &#8212; Linux v1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Link" href="link.html" />
+    <link rel="prev" title="Linux Love" href="first.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="link.html" title="Link"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="first.html" title="Linux Love"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Linux v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">memo</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="memo">
+<h1>memo<a class="headerlink" href="#memo" title="Permalink to this headline">¶</a></h1>
+<p>sudo su -
+echo 200 &gt; /sys/class/backlight/intel_backlight/brightness</p>
+<p>#Anacondaを使用する前に実行する
+export PATH=/home/yoshi/Document/anaconda3/bin:$PATH</p>
+<p>#bluetoothにてマウスを接続する
+#https://arimasou16.com/blog/2019/06/03/00301/</p>
+<p>#コマンドからパッケージを検索する
+1.whichコマンドでコマンドのパスを探す
+2.dpkg –search にてパスからパッケージを検索する</p>
+<p>#ポート番号から使用しているプロセスを特定する
+sudo lsof -i:&lt;port&gt;</p>
+<p>#グローバルIPアドレスを確認する
+curl ifconfig.io</p>
+<p>#ラズパイにてイーサネットケーブルを抜いたらワイヤレス接続できない件
+#https://ja.stackoverflow.com/questions/1946/raspberry-pi%E3%81%A7lan%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB%E3%82%92%E6%8A%9C%E3%81%8F%E3%81%A8wifi%E3%81%8C%E4%BD%BF%E3%81%88%E3%81%AA%E3%81%84
+# arp -d [対象のホスト（IPアドレス）]
+#nmcli delete</p>
+<p>#sshのPortを変更して接続したらNo route to hostのErrorが返される
+OS:CentOS
+<strong>X</strong>
+ChangeFiles:/etc/ssh/sshd_config
+ChangeWord:Port XX
+<strong>O</strong>
+/etc/ssh/sshd_config
+/usr/lib/firewalld/services/ssh.xml</p>
+<p>#Raspberry Pi
+#Wlan0 - MAC Address:dc:a6:32:71:68:ec</p>
+<p>#nginxのエラーを解消する
+#pgrep nginx | xargs kill -9</p>
+<p>#X11 forwarding request failed on channel 0
+#xauth コマンドを入れる
+#sudo yum install xauth
+#sudo apt install xauth
+#https://qiita.com/mohi_teak/items/473fda1f03cbd9cc8518
+#https://sites.google.com/site/teyasn001/ubuntu-12-10/sshniyorux11zhuan-song</p>
+<p>#ApacheでHTTPSサーバを構成する
+#https://qiita.com/jinnai73/items/638dcc1434d47b12e6ba</p>
+<p>#rmコマンドで指定のファイル（ディレクトリ）以外を削除する
+ls|grep -v -E “^正規表現” | xargs rm -r
+<a class="reference external" href="https://uuutee.net/shell/rm-exclude/">https://uuutee.net/shell/rm-exclude/</a></p>
+<p>sudo apt install ibus-pinyin #中国語をインストールする</p>
+<p>~/.local/share/Trash # ゴミ箱の場所</p>
+<p>#lynxにてVIMのキーバインドを使用するには–vikeysをつける</p>
+<p>#wget よく使うコマンド
+wget -r -l1 -A jpg -w 3 –random-wait “URL”
+# MyDocumentsなどのディレクトリを消した後に実行
+xdg-user-dirs-update</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="first.html"
+                        title="previous chapter">Linux Love</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="link.html"
+                        title="next chapter">Link</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/test.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="link.html" title="Link"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="first.html" title="Linux Love"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Linux v1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">memo</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, yoshi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

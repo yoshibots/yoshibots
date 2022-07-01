@@ -1,0 +1,33 @@
+===
+Xen
+===
+
+概要
+=======
+Xenはケンブリッジ大学の研究所で開発された仮想化ソフトウェア。
+
+オープンソースのXenは「Xen Project」によって開発提供されていますが、同時にCitrix社によってエンタープライズ向けのXenServerとしても提供されている。
+
+Install
+=======
+
+| Type:ハイパーバイザ型
+
+Command
+=======
+
+=======  ===============
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+COMMAND  B
+=======  ===============

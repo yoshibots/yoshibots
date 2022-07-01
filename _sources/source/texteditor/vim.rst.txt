@@ -1,0 +1,11 @@
+===
+VIM
+===
+
+Install
+=======
+
+.. code-block:: set
+   :set list # 改行を表示する
+
+

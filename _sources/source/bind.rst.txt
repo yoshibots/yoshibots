@@ -1,0 +1,18 @@
+====
+Bind
+====
+
+Install
+=======
+
+.. code-block:: test
+
+   dnf install -y bind
+
+Commonly used
+=============
+
+.. code-block:: 
+
+   named named-checkconf # 構文確認
+

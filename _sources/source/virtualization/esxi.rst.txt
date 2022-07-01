@@ -1,0 +1,41 @@
+===========
+VMware ESXi
+===========
+
+Type:Hypervisor
+
+
+.. warning::
+
+   ESXiの仕様上/bin,/etc/など再起動によりDiskがCleanupされる為、データが初期化される場合があるので注意する。(Versionにより)
+
+
+.. note:: 
+
+   Aliasは.profileに記載することで再起動時も設定を維持できる。
+
+.. code-block::
+
+   esxcli system maintenanceMode get # メンテナンスモードの確認
+   esxcli system maintenanceMode set --enable false # メンテナンスモードの解除
+
+   esxcli system maintenanceMode set --timeout 0 --enable yes # メンテナンスモードへ移行
+
+   
+   esxcli system shutdown poweroff -r maintenance # PowerOff
+
+
+
+   vim-cmd vmsvc/getallvms  # VMの一覧を確認
+   vim-cmd vmsvc/power.on <VMID|VMNAME>  # 起動
+   vim-cmd vmsvc/power.off <VMID|VMNAME> # 停止
+
+
+
+# パスワード認証の無効化
+/etc/ssh/sshd_configに下記を追記
+ChallengeResponseAuthentication no
+
+# ssh再起動
+/etc/init.d/SSH restart
+

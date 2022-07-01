@@ -1,0 +1,17 @@
+=======
+Ansible
+=======
+
+Install
+=======
+
+.. code-block::
+
+   dnf install -y ansible-core
+
+
+
+Reference
+=========
+
+`Using Ansible in RHEL 9 <https://access.redhat.com/articles/6393321>`_

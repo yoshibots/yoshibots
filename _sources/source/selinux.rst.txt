@@ -1,0 +1,46 @@
+=======
+SELinux
+=======
+
+Install
+=======
+
+Package
+=======
+
+semange command
+---------------
+
+.. code-block:: semanage
+
+   dnf install -y policycoreutils-python-utils # CentOS8,RHEL9,
+   yum install -y policycoreutils-python       # CentOS7,
+
+基本形
+========
+
+.. code-block:: 
+
+   semanage port --list # 
+   semanage -a -t <LABELTYPE> -p tcp <PORT_NUMBER> # 
+
+
+Example
+=======
+
+sshの...
+---------------
+
+.. code-block:: ssh
+   
+   semanage port --list | grep ssh             # sshのLabel確認
+   semanage port -a -t ssh_port_t -p tcp 20000 # 20000ポートにssh_port_tのラベルを設定
+
+
+http
+---------------
+
+.. code-block:: http
+   
+   semanage port --list | grep http             # httpのLabel確認
+   semanage port -a -t http_port_t -p tcp 20000 # 20000ポートにhttp_port_tのラベルを設定

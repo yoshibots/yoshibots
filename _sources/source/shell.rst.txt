@@ -1,0 +1,17 @@
+Shellの種類
+============
+
+
+* sh  : Bourne shell
+        ベル研究所のStephen R. Bourneが開発したシェル。B shellとも。
+* csh : C shell
+        カリフォルニア大学バークレイ校のBill Joyが開発したシェル。
+* ksh : korn shell
+        ベル研究所のDavid Kornが開発したシェル。Bourne shellとC shellの長所を程よく取り入れていた。
+* bash : Bourne Again SHell
+         Free Software Foundationが開発したシェル。
+* tcsh : 
+         C shellを改良したシェル。
+* zsh  : 
+         Paul Falstadがプリンストン大学の学生であった時に開発したシェル。
+*
