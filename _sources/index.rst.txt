@@ -135,7 +135,6 @@ Welcome to Linux's
    /source/git
    /source/gitlab
    /source/tmux
-   /source/zsh
    /source/logrotate
    /source/setup
    /source/shell

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Shellの種類 &mdash; Linux v1.0 documentation</title>
+  <title>SHELL &mdash; Linux v1.0 documentation</title>
   
 
   
@@ -40,7 +40,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="VIM" href="texteditor/vim.html" />
+    <link rel="prev" title="setup" href="setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,6 +100,11 @@
 <li class="toctree-l1"><a class="reference internal" href="os/redhat.html">RedHat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="os/suselinux.html">SUSELinux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="os/solaris.html">Solaris</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/windows.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Network:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="network/network.html">NetworkInterface (NIC)  +</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
@@ -178,10 +185,25 @@
 <li class="toctree-l1"><a class="reference internal" href="virtualization/docker.html">Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualization/kubernetes.html">Kubernetes</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Other:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Framework:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="framework/django.html">Django</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other:</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gitlab.html">Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logrotate.html">Logrotate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SHELL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Shellの種類</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#z-shell">Z shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install">Install</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TextEditor:</span></p>
 <ul>
@@ -237,7 +259,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Shellの種類</li>
+      <li>SHELL</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -257,7 +279,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="shell">
-<h1>Shellの種類<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h1>
+<h1>SHELL<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Shellの種類<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>sh<span class="classifier">Bourne shell</span></dt><dd><p>ベル研究所のStephen R. Bourneが開発したシェル。B shellとも。</p>
@@ -292,12 +316,42 @@
 <li></li>
 </ul>
 </div>
+</div>
+<div class="section" id="z-shell">
+<h1>Z shell<a class="headerlink" href="#z-shell" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">zsh</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">shells</span> <span class="c1"># Show Current Shell</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chsh</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">zsh</span> <span class="c1"># Change Current Shell</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">.</span><span class="n">zshrc</span>
+
+<span class="c1"># .zshrc ---------------------------------</span>
+
+<span class="n">autoload</span> <span class="o">-</span><span class="n">U</span> <span class="n">compinit</span>
+<span class="n">compinit</span>
+
+<span class="c1"># .zshrc ---------------------------------</span>
+</pre></div>
+</div>
+</div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="texteditor/vim.html" class="btn btn-neutral float-right" title="VIM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="setup.html" class="btn btn-neutral float-left" title="setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

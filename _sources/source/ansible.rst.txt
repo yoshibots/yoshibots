@@ -10,8 +10,11 @@ Install
    dnf install -y ansible-core
 
 
+Case
+====
 
 Reference
 =========
 
-`Using Ansible in RHEL 9 <https://access.redhat.com/articles/6393321>`_
+`Ansible Documentation <https://docs.ansible.com/>`_
+----------------------------------------------------

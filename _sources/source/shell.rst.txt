@@ -1,3 +1,8 @@
+=====
+SHELL
+=====
+
+
 Shellの種類
 ============
 
@@ -15,3 +20,35 @@ Shellの種類
 * zsh  : 
          Paul Falstadがプリンストン大学の学生であった時に開発したシェル。
 *
+
+
+=======
+Z shell
+=======
+
+Install
+=======
+
+.. code-block::
+   
+   yum install -y zsh
+
+.. code-block::
+
+   cat /etc/shells # Show Current Shell
+
+.. code-block::
+
+  chsh -s /bin/zsh # Change Current Shell
+ 
+
+.. code-block::
+
+  vi .zshrc
+
+  # .zshrc ---------------------------------
+
+  autoload -U compinit
+  compinit
+
+  # .zshrc ---------------------------------
