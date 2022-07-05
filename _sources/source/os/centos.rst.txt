@@ -1,3 +1,18 @@
 ======
 CentOS
 ======
+
+
+
+CentOS7
+-------
+
+
+
+# 注意点
+
+IPv6は無効化しないこと
+　|__SELinuxのコンポーネント等で不具合が出る場合がある
+
+Questions about CentOS-7
+https://wiki.centos.org/FAQ/CentOS7#head-8984faf811faccca74c7bcdd74de7467f2fcd8ee

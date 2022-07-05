@@ -136,6 +136,7 @@ Welcome to Linux's
    /source/gitlab
    /source/tmux
    /source/zsh
+   /source/logrotate
    /source/setup
 
 .. toctree::
