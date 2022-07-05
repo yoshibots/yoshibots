@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="bind" href="bind.html" />
+    <link rel="next" title="Nagios" href="nagios.html" />
     <link rel="prev" title="Splunk" href="splunk.html" /> 
 </head>
 
@@ -87,44 +87,147 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Container:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">System:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vagrant.html">VAGRANT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/unix.html">UNIX</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OS:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="os/ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/centos.html">CentOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/archlinux.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/kalilinux.html">KALI LINUX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/redhat.html">RedHat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/suselinux.html">SUSELinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/solaris.html">Solaris</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Network:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="network/network.html">NetworkInterface (NIC)  +</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="selinux.html">SELinux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ansible.html">ansible</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="go.html">GO LANG</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">MW:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="link.html">Link</a></li>
-<li class="toctree-l1"><a class="reference internal" href="squid.html">squid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="squid.html">Squid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apache.html">Apache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="litespeed.html">LiteSpeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tomcat.html">Tomcat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="splunk.html">Splunk</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Zabbix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bind.html">bind</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Zabbix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ready">Ready…</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#package">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#firewall">Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selinux">SELinux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">構築手順</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-repository">Add Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">設定ファイルの編集</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">自動起動の設定及び起動</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#next-step">Next Step</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#case">Case</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#slack">Slackに通知する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">複数のSlackに通知を送りたい</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zabbix-5-0-slack">Zabbix 5.0 で Slack にアラートを連携する</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nagios.html">Nagios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="redmine.html">Redmine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bind.html">Bind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samba.html">Samba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bacula.html">Bacula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snort.html">Snort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mail/postfix.html">Postfix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mail/sendmail.html">Sendmail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keepalive.html">Keepalive</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pacemaker.html">Pacemaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corosync.html">Corosync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drdb.html">DRDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="haproxy.html">HAProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openvpn.html">OpenVPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openam.html">OpenAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keycloak.html">KeyCloak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elasticsearch.html">Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kibana.html">Kibana</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openldap.html">OpenLDAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kafka.html">Apache Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logstash.html">Logstash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fluentd.html">Fluentd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apache_hadoop.html">Apache Hadoop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apache_spark.html">Apache Spark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openshift.html">Openshift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="puppet.html">Puppet</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Database:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/maria.html">MariaDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database/mongo.html">Mongo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database/postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/oracle.html">OracleDatabase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/cassandra.html">Cassandra</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Cloud:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="cloud/index.html">Cloud Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cloud/aspire.html">ASPIRE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cloud/aws.html">AWS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cloud/gcp.html">Google Cloud Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cloud/azure.html">Microsoft Azure</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Virtualization:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/index.html">Virtualization Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/vagrant.html">VAGRANT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/virtualbox.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/kvm.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/xen.html">Xen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/hyper-v.html">Hyper-v</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/esxi.html">VMware ESXi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/kubernetes.html">Kubernetes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="framework/django.html">Django</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitlab.html">Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zsh.html">z shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logrotate.html">Logrotate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">TextEditor:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="texteditor/vim.html">VIM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="texteditor/emacs.html">Emacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="texteditor/sakura.html">サクラエディタ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="texteditor/vscode.html">Visual Studio Code</a></li>
 </ul>
 
             
@@ -194,6 +297,98 @@
             
   <div class="section" id="zabbix">
 <h1>Zabbix<a class="headerlink" href="#zabbix" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ready">
+<h2>Ready…<a class="headerlink" href="#ready" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="package">
+<h3>Package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">wget</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="firewall">
+<h3>Firewall<a class="headerlink" href="#firewall" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="nb">all</span> <span class="c1"># 確認</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=</span><span class="mi">10050</span><span class="o">/</span><span class="n">tcp</span> <span class="o">--</span><span class="n">permanent</span> <span class="c1"># ポートの追加</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=</span><span class="mi">10051</span><span class="o">/</span><span class="n">tcp</span> <span class="o">--</span><span class="n">permanent</span> <span class="c1"># ポートの追加</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">reload</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selinux">
+<h3>SELinux<a class="headerlink" href="#selinux" title="Permalink to this headline">¶</a></h3>
+<p>SELinuxでポートを変更している場合は下記の設定を行う</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">semanage port -a -t &lt;zabbix_port_t&gt; -p tcp &lt;10050&gt;</div>
+<div class="line">semanage port -a -t &lt;zabbix_agent_port_t&gt; -p tcp &lt;10051&gt;</div>
+<div class="line">semanage port –list | grep zabbix</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>構築手順<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="add-repository">
+<h3>Add Repository<a class="headerlink" href="#add-repository" title="Permalink to this headline">¶</a></h3>
+<p>Zabbixのリポジトリより最新版（zabbix-agent2-5.0.9-1.el7.x86_64.rpm）のAgent2をDownload</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">zabbix</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">zabbix</span><span class="o">/</span><span class="mf">5.0</span><span class="o">/</span><span class="n">rhel</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="n">x86_64</span><span class="o">/</span><span class="n">zabbix</span><span class="o">-</span><span class="n">agent2</span><span class="o">-</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">9</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span>
+<span class="n">yum</span> <span class="n">clean</span> <span class="nb">all</span> <span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install">
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">zabbix</span><span class="o">-</span><span class="n">agent2</span><span class="o">-</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">9</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> <span class="c1"># インストール</span>
+<span class="n">rm</span> <span class="n">zabbix</span><span class="o">-</span><span class="n">agent2</span><span class="o">-</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">9</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> <span class="c1"># 掃除</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>設定ファイルの編集<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">zabbix</span><span class="o">/</span><span class="n">zabbix_agent2</span><span class="o">.</span><span class="n">conf</span> <span class="c1"># 設定ファイルの編集</span>
+
+<span class="c1"># /etc/zabbix/zabbix_agent2.conf ----------------------</span>
+
+  <span class="n">Server</span>         <span class="c1">#</span>
+  <span class="n">ServerActive</span>   <span class="c1">#</span>
+  <span class="n">Hostname</span>       <span class="c1">#Zabbixサーバに登録するホスト名</span>
+
+<span class="c1"># -----------------------------------------------------</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>自動起動の設定及び起動<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">enable</span> <span class="o">--</span><span class="n">now</span> <span class="n">zabbix</span><span class="o">-</span><span class="n">agent2</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-step">
+<h3>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h3>
+<p>GUI上にてZabbixホストを登録し疎通確認を行う</p>
+</div>
+</div>
+<div class="section" id="case">
+<h2>Case<a class="headerlink" href="#case" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="slack">
+<h3>Slackに通知する<a class="headerlink" href="#slack" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p># アラートを複数のチャンネル(slack)に分割する</p>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3>複数のSlackに通知を送りたい<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://qiita.com/3244/items/027fa9752dfa67bdb8d3">https://qiita.com/3244/items/027fa9752dfa67bdb8d3</a></p>
+</div>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zabbix-5-0-slack">
+<h3>Zabbix 5.0 で Slack にアラートを連携する<a class="headerlink" href="#zabbix-5-0-slack" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://qiita.com/Higemal/items/f0bc18bf66e54628b22a">https://qiita.com/Higemal/items/f0bc18bf66e54628b22a</a></p>
+</div>
+</div>
 </div>
 
 
@@ -202,7 +397,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="bind.html" class="btn btn-neutral float-right" title="bind" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="nagios.html" class="btn btn-neutral float-right" title="Nagios" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="splunk.html" class="btn btn-neutral float-left" title="Splunk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

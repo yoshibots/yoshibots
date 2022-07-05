@@ -1,3 +1,105 @@
 ======
 Zabbix
 ======
+
+Ready...
+========
+
+Package
+-------
+
+.. code-block::
+
+   yum install -y wget
+
+Firewall
+---------
+
+.. code-block::
+
+  firewall-cmd --list-all # 確認
+  firewall-cmd --add-port=10050/tcp --permanent # ポートの追加
+  firewall-cmd --add-port=10051/tcp --permanent # ポートの追加
+  firewall-cmd --reload
+
+
+SELinux
+-------
+SELinuxでポートを変更している場合は下記の設定を行う
+
+.. note::
+
+  | semanage port -a -t <zabbix_port_t> -p tcp <10050>
+  | semanage port -a -t <zabbix_agent_port_t> -p tcp <10051>
+  | semanage port --list | grep zabbix
+
+
+構築手順
+=========
+
+Add Repository
+--------------
+
+Zabbixのリポジトリより最新版（zabbix-agent2-5.0.9-1.el7.x86_64.rpm）のAgent2をDownload
+
+.. code-block::
+
+   wget https://repo.zabbix.com/zabbix/5.0/rhel/7/x86_64/zabbix-agent2-5.0.9-1.el7.x86_64.rpm
+   yum clean all # 
+
+Install
+--------
+
+.. code-block::
+
+  yum install -y zabbix-agent2-5.0.9-1.el7.x86_64.rpm # インストール
+  rm zabbix-agent2-5.0.9-1.el7.x86_64.rpm # 掃除
+ 
+設定ファイルの編集
+--------------------
+
+.. code-block::
+
+  vi /etc/zabbix/zabbix_agent2.conf # 設定ファイルの編集
+
+  # /etc/zabbix/zabbix_agent2.conf ----------------------
+
+    Server         #
+    ServerActive   #
+    Hostname       #Zabbixサーバに登録するホスト名
+
+  # -----------------------------------------------------
+
+自動起動の設定及び起動
+-----------------------
+
+.. code-block::
+
+  systemctl enable --now zabbix-agent2.service
+
+
+Next Step
+---------
+
+GUI上にてZabbixホストを登録し疎通確認を行う
+
+
+Case
+=====
+
+Slackに通知する
+---------------
+
+
+ # アラートを複数のチャンネル(slack)に分割する
+ 
+複数のSlackに通知を送りたい
+-----------------------------
+https://qiita.com/3244/items/027fa9752dfa67bdb8d3
+
+Reference
+==========
+
+Zabbix 5.0 で Slack にアラートを連携する
+------------------------------------------
+https://qiita.com/Higemal/items/f0bc18bf66e54628b22a
