@@ -5,7 +5,13 @@ VIM
 Install
 =======
 
-.. code-block:: set
+.. code-block:: 
+
    :set list # 改行を表示する
+
+.. code-block:: 
+   
+   CTRL + INSERT  # Copy
+   SHIFT + INSERT # Paste
 
 

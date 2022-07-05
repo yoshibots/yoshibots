@@ -1,0 +1,20 @@
+z shell
+=======
+
+# Install
+> yum install -y zsh
+
+# Show Current Shell
+> cat /etc/shells
+
+# Change Current Shell
+> chsh -s /bin/zsh
+
+
+# .zshrcに下記を追加
+# .zshrc ---------------------------------------
+
+autoload -U compinit
+compinit
+
+------------------------------------------------

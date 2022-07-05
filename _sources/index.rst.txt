@@ -133,6 +133,9 @@ Welcome to Linux's
 
    /source/git
    /source/gitlab
+   /source/tmux
+   /source/zsh
+   /source/setup
 
 .. toctree::
    :maxdepth: 2
