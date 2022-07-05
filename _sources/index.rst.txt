@@ -12,7 +12,6 @@ Welcome to Linux's
 
    /source/system/unix
 
-
 .. toctree::
    :maxdepth: 2
    :caption: OS:
@@ -24,6 +23,7 @@ Welcome to Linux's
    /source/os/redhat
    /source/os/suselinux
    /source/os/solaris
+   /source/os/windows
 
 .. toctree::
    :maxdepth: 2
@@ -138,6 +138,7 @@ Welcome to Linux's
    /source/zsh
    /source/logrotate
    /source/setup
+   /source/shell
 
 .. toctree::
    :maxdepth: 2

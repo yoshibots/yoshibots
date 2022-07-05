@@ -1,17 +1,102 @@
-===
+====
 VIM
-===
+====
 
 Install
 =======
 
-.. code-block:: 
+https://www.vim.org/
 
-   :set list # 改行を表示する
+Set Options
+===========
 
-.. code-block:: 
-   
+.. code-block::
+
+  :set <OPTION>?       # 現在の値を表示する
+
+  :set list            # 改行を表示する
+  :set number/nu       # 行番号を表示する
+  :set nonumber/nonu   # 行番号を非表示にする
+  :set autowrite       # 自動保存の有効化(ファイル移動の度に保存)
+  :set noautowrite     # 自動保存の解除
+
+  :set confirm         # 保存されていないファイルがあるときは終了前に保存確認
+  :set hidden          # 保存されていないファイルがあるときでも別のファイルを開くことが出来る
+  :set autoread        # 外部でファイルに変更がされた場合は読みなおす
+  :set nobackup        # ファイル保存時にバックアップファイルを作らない
+  :set noswapfile      # ファイル編集中にスワップファイルを作らない
+
+.. code-block::
+
    CTRL + INSERT  # Copy
    SHIFT + INSERT # Paste
 
 
+   $vim filename filename …
+   指定したファイルをすべて開いてVimを起動
+
+
+:
+==
+
+:next
+------
+次のファイルを編集する。:n でも可。現在のファイルが編集中ならエラーになる。
+
+:next!
+------
+現在のファイルが編集中でも強制的に次のファイルを編集する
+
+:wnext
+------
+現在のファイルを保存して次のファイルへ。 :wn でも可。
+
+:args
+-----
+指定したファイルと現在のファイルを確認できる
+
+:previous
+---------
+:nextと逆方向にファイルを開く。:prev でも可。
+現在のファイルが編集中ならエラーになる。
+強制的に移動するときは :previous!
+
+:wprevious
+----------
+現在のファイルを保存して前のファイルへ。:wp でも可。
+
+
+:last
+-----
+最後尾のファイルへ。:la でも可。
+
+:first
+------
+最初のファイルへ。:fir でも可。
+
+Case
+====
+
+起動中のVimから複数ファイルを開く
+-----------------------------------
+
+:args a.txt b.txt c.txt
+
+
+指定したファイルを開く。
+ワイルドカードを使うこともできる :args \*.c
+
+他のファイルを開く
+:edit filename
+ファイルを開く。:e filename でも可。ファイル名を指定しない場合、カレントフ ァイルを開き直す。カレントファイルが編集中の時はエラーになる。
+:edit! filename
+:e! filename でも可。カレントファイルが編集中でも強制的に開く。
+
+CTRL--
+直近の2つのファイルを交互に開くことができる
+
+Reference
+=========
+
+`Vim Cheat Sheet <https://vim.rtorr.com/lang/ja>`_
+--------------------------------------------------
