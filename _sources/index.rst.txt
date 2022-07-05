@@ -29,6 +29,7 @@ Welcome to Linux's
    :maxdepth: 2
    :caption: Network:
 
+   /source/network/network
    
 .. toctree::
    :maxdepth: 2

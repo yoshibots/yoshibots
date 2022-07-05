@@ -8,63 +8,65 @@ LinkSpeed:1000Mb/s = 1Gbps
 VMware vSphereプラットフォームで実行されている仮想マシン（VM）で高性能を実現するように設計された仮想ネットワークアダプターです。
 LinkSpeed:10000Mb/s = 10Gbps
 
+nmcli
+-----
 
 .. code-block:: 
 
    nmcli con m ens192 ipv4.method manual ipv4.address <ip_address> # IPv4の設定
    nmcli connection add type ethernet ifname <ens224> con-name <ens224> # IFの登録
 
-# ipv4-type
->  nmcli c m <IF> ipv4.method manual
-# ipv4-アドレスの設定
->  nmcli con m ens192 ipv4.address "<ip_address/prefix>"
+   nmcli c m <IF> ipv4.method manual
+   nmcli con m ens192 ipv4.address "<IF/PREFIX>"
 
-# --------------------------------------------------------+
-# Static Route+
-# --------------------------------------------------------+
+# Static Route
 
-> nmcli c a <設定したいInterface> +ipv4.routes "<nw address/prefix> <gw address>" # 追加
-> nmcli c a <設定したいInterface> -ipv4.routes "<nw address/prefix> <gw address>" # 削除
-
-#自動起動
-nmcli c m ens192 connection.autoconnect yes
-
-# gatewayの設定
 .. code-block::
 
-  nmcli c m ens192 ipv4.gateway "<gw_address>"
+  nmcli c a <設定したいInterface> +ipv4.routes "<nw address/prefix> <gw address>" # 追加
+  nmcli c a <設定したいInterface> -ipv4.routes "<nw address/prefix> <gw address>" # 削除
 
-# インターフェースの停止＆有効化
 .. code-block::
 
-  nmcli c d <interface> && nmcli c u <interface>
+   nmcli c m ens192 connection.autoconnect yes # 自動接続の有効化
+
+
+.. code-block::
+
+  nmcli c m ens192 ipv4.gateway "<gw_address>" # GWの設定
+
+.. code-block::
+
+  nmcli c d <interface> && nmcli c u <interface> # IFの停止と起動
 
 #ipv6無効化
->  nmcli con mod <ens192> ipv6.method ignore
->  nmcli con mod <ens192> ipv4.may-fail no
+
+.. code-block::
+
+  nmcli con mod <ens192> ipv6.method ignore
+  nmcli con mod <ens192> ipv4.may-fail no
 
 
-# icmp パケットを確認する
-> tcpdump -i <eth1> -p icmp
+tcpdump
+-------
+
+.. code-block::
+
+   tcpdump -i <eth1> -p icmp # <eth1>で受信するicmpパケットの確認
 
 
-# ========================================================+
-# Firewall+
-# ========================================================+
+firewall-cmd
+------------
 
+.. code-block::
 
-# 
-> firewall-cmd --add-source=<IP_ADDRESS> --permanent
-
-# 
-> firewall-cmd --reload
-
+  firewall-cmd --add-source=<IP_ADDRESS> --permanent # Sourceを指定
+  firewall-cmd --add-service=<serice> --permanent    # Serviceを指定
+  firewall-cmd --add-port=<port> --permanent         # Portを指定 
+  firewall-cmd --reload # 再読込
 
 複数NICのルーティング(Linux)
 https://livescamp.com/learn/nic
-
-
-
 
 # よく使う
 # curl でtelnet確認
