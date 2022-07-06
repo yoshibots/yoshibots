@@ -30,7 +30,7 @@ Set Options
 
    CTRL + INSERT  # Copy
    SHIFT + INSERT # Paste
-
+   ggVG           # 全選択
 
    $vim filename filename …
    指定したファイルをすべて開いてVimを起動

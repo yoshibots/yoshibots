@@ -5,6 +5,9 @@ SELinux
 Install
 =======
 
+.. code-block::
+   
+
 Package
 =======
 
@@ -24,28 +27,20 @@ semange command
    semanage port --list # 
    semanage -a -t <LABELTYPE> -p tcp <PORT_NUMBER> # 
 
-
-Package
 
->yum install -y policycoreutils-python-utils 
+.. warning::
+   
+   無効状態から直接有効にするとラベルが適切でないものがある場合起動しなくなってしまう場合がある。その為、下記の手順を実施して一度Permissiveで起動後に有効化する。
 
-
-# 無効から有効にする際の注意点
-無効状態から直接有効にするとラベルが適切でないものがある場合起動しない場合がある。
-その為、下記の手順を実施して一度Permissiveで起動後に有効化する。
-
-# ルートディレクトリに.autorelabel を作成する
-root> touch .autorelabel 
-
-# Permissiveに変更して起動させる
+.. code-block::
+   
+  # ルートディレクトリに.autorelabel を作成する
+  root> touch .autorelabel 
+   
+  # Permissiveに変更して起動させる
 
 # Enforcingで起動
 > vi /etc/selinux/config ------------------------------
-
-
-
--------------------------------------------------------
-
 
 
 # 参照権限の付与
@@ -57,14 +52,12 @@ root> touch .autorelabel
 
 ## よく使うコマンド------------------------------------
 
-# portの追加
-> semanage port -a -t <ssh_port_t> -p tcp <PORT_NUMBER> # Ex.ssh_port_t
+.. code-block::
 
-# portの削除
-> semanage port -d -t <TYPE_LABEL> -p tcp <PORT_NUMBER>
+  semanage port -a -t <ssh_port_t> -p tcp <PORT_NUMBER> # Ex.ssh_port_t  # portの追加
+  semanage port -d -t <TYPE_LABEL> -p tcp <PORT_NUMBER> # portの削除
 
 
-#
 > semanage fcontext --list | grep httpd_config_t
 
 # コンテキスト定義ルール一覧表示

@@ -292,6 +292,9 @@
 <h1>SELinux<a class="headerlink" href="#selinux" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="package">
 <h2>Package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h2>
@@ -309,29 +312,28 @@ yum install -y policycoreutils-python       # CentOS7,
 <span class="n">semanage</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">LABELTYPE</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1">#</span>
 </pre></div>
 </div>
-<p>
-Package</p>
-<p>&gt;yum install -y policycoreutils-python-utils</p>
-<p># 無効から有効にする際の注意点
-無効状態から直接有効にするとラベルが適切でないものがある場合起動しない場合がある。
-その為、下記の手順を実施して一度Permissiveで起動後に有効化する。</p>
-<p># ルートディレクトリに.autorelabel を作成する
-root&gt; touch .autorelabel</p>
-<p># Permissiveに変更して起動させる</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>無効状態から直接有効にするとラベルが適切でないものがある場合起動しなくなってしまう場合がある。その為、下記の手順を実施して一度Permissiveで起動後に有効化する。</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ルートディレクトリに.autorelabel を作成する</span>
+<span class="n">root</span><span class="o">&gt;</span> <span class="n">touch</span> <span class="o">.</span><span class="n">autorelabel</span>
+
+<span class="c1"># Permissiveに変更して起動させる</span>
+</pre></div>
+</div>
 <p># Enforcingで起動
 &gt; vi /etc/selinux/config ——————————</p>
-<hr class="docutils" />
 <p># 参照権限の付与
 &gt; semanage fcontext -a -t httpd_sys_content_t “&lt;XXX&gt;”</p>
 <p>&gt; setsebool -P httpd_can_network_connect_db 1 # 要確認 -&gt; webserver経由でDBアクセスできる設定
 &gt; setsebool -P httpd_can_network_connect=on</p>
 <p>## よく使うコマンド————————————</p>
-<p># portの追加
-&gt; semanage port -a -t &lt;ssh_port_t&gt; -p tcp &lt;PORT_NUMBER&gt; # Ex.ssh_port_t</p>
-<p># portの削除
-&gt; semanage port -d -t &lt;TYPE_LABEL&gt; -p tcp &lt;PORT_NUMBER&gt;</p>
-<p>#
-&gt; semanage fcontext –list | grep httpd_config_t</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">ssh_port_t</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1"># Ex.ssh_port_t  # portの追加</span>
+<span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">TYPE_LABEL</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1"># portの削除</span>
+</pre></div>
+</div>
+<p>&gt; semanage fcontext –list | grep httpd_config_t</p>
 <p># コンテキスト定義ルール一覧表示
 &gt; semanage fcontext -l</p>
 <p># SELinux のタイプ(type)一覧表示
