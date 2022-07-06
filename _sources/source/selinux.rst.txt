@@ -24,6 +24,115 @@ semange command
    semanage port --list # 
    semanage -a -t <LABELTYPE> -p tcp <PORT_NUMBER> # 
 
+
+Package
+
+>yum install -y policycoreutils-python-utils 
+
+
+# 無効から有効にする際の注意点
+無効状態から直接有効にするとラベルが適切でないものがある場合起動しない場合がある。
+その為、下記の手順を実施して一度Permissiveで起動後に有効化する。
+
+# ルートディレクトリに.autorelabel を作成する
+root> touch .autorelabel 
+
+# Permissiveに変更して起動させる
+
+# Enforcingで起動
+> vi /etc/selinux/config ------------------------------
+
+
+
+-------------------------------------------------------
+
+
+
+# 参照権限の付与
+> semanage fcontext -a -t httpd_sys_content_t "<XXX>"
+
+> setsebool -P httpd_can_network_connect_db 1 # 要確認 -> webserver経由でDBアクセスできる設定
+> setsebool -P httpd_can_network_connect=on
+
+
+## よく使うコマンド------------------------------------
+
+# portの追加
+> semanage port -a -t <ssh_port_t> -p tcp <PORT_NUMBER> # Ex.ssh_port_t
+
+# portの削除
+> semanage port -d -t <TYPE_LABEL> -p tcp <PORT_NUMBER>
+
+
+#
+> semanage fcontext --list | grep httpd_config_t
+
+# コンテキスト定義ルール一覧表示
+> semanage fcontext -l
+
+# SELinux のタイプ(type)一覧表示
+> seinfo -t
+
+# SELinuxのClassとPermission一覧表示
+> seinfo -x -c
+
+# 定義したRuleの削除
+semanage fcontext -d -e </var/www> </var/test_www>
+
+# 組み込みルールのステータスを確認
+> getsebool -a  # grep で絞り込む getsebool -a | grep http
+
+# 設定状態の確認(SELinux の個別追加設定した内容を表示(ただしsemodule等で追加したモジュール情報は見れない))
+> semanage export
+
+# AVCの確認
+> sesearch -A -s httpd_t -b httpd_can_network_connect_db -p name_connect
+# 上記で許可されているPortの確認
+> seinfo --protocol=tcp --port | grep -E 'mongod_port_t|gds_db_port_t|mssql_port_t|oracle_port_t|postgresql_port_t|mysqld_port_t'
+
+## ----------------------------------------------------
+
+# Nginxのドキュメントルートを変更した時のSELinuxの設定
+SELinuxでApacheで/var/wwwから変更した先のパスも許可する
+https://tex2e.github.io/blog/linux/selinux-httpd-change-documentroot
+
+> ls -dZ </var/www> 
+> semanage fcontext -a -e </var/www> </var/test_www>   # /var/www=参照するLabelのdir /var/test_www=対象とするdir
+
+# Policyの確認
+> semanage fcontext -l
+
+# restoreconコマンドで反映させる
+> restorecon -R -v </var/test_www>
+
+# chcon
+chcon -u <XX> <FILENAME>
+chcon system_u:object_r:mongod_var_lib_t:s0 <FILENAME>
+
+
+# SELinux関連のトラブルシュート
+* Resolving SELinux Security Exceptions
+https://www.nginx.com/blog/using-nginx-plus-with-selinux/
+    
+  > cat /var/log/audit/audit.log | grep denied
+  
+  # 番号でGrep
+  >grep <1415714880.156:29> /var/log/audit/audit.log | audit2why
+  
+  
+  
+Ref
+-------
+  
+  とほほのSELinux入門
+  https://www.tohoho-web.com/ex/selinux.html
+  
+  SELinux のコンテキスト定義ルール一覧表示
+  https://milestone-of-se.nesuke.com/sv-advanced/selinux/config-list-add-del/
+  
+  RedHatでPHPからDBサーバに接続できないときはSELinuxの設定が原因かも?
+  https://dev.classmethod.jp/articles/redhat-selinx-might-block-network-connection-to-servers-from-apache-php/
+  '')))""
 
 Example
 =======
@@ -33,7 +142,7 @@ sshの...
 
 .. code-block:: ssh
    
-   semanage port --list | grep ssh             # sshのLabel確認
+   semanage port --list | grep ssh  # sshのLabel確認
    semanage port -a -t ssh_port_t -p tcp 20000 # 20000ポートにssh_port_tのラベルを設定
 
 
@@ -42,5 +151,5 @@ http
 
 .. code-block:: http
    
-   semanage port --list | grep http             # httpのLabel確認
+   semanage port --list | grep http  # httpのLabel確認
    semanage port -a -t http_port_t -p tcp 20000 # 20000ポートにhttp_port_tのラベルを設定

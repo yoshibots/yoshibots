@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Link" href="link.html" />
+    <link rel="next" title="Python" href="python.html" />
     <link rel="prev" title="main" href="main.html" /> 
 </head>
 
@@ -87,9 +87,24 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Container:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">System:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system/unix.html">UNIX</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OS:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="os/ubuntu.html">Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/centos.html">CentOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/archlinux.html">ArchLinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/kalilinux.html">KALI LINUX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/redhat.html">RedHat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/suselinux.html">SUSELinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/solaris.html">Solaris</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os/windows.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Network:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="network/network.html">NetworkInterface (NIC)  +</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul class="current">
@@ -100,7 +115,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#semange-command">semange command</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">基本形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">基本形</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ref">Ref</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#example">Example</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ssh">sshの…</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#http">http</a></li>
@@ -109,19 +127,100 @@
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="go.html">GO LANG</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">MW:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="link.html">Link</a></li>
-<li class="toctree-l1"><a class="reference internal" href="squid.html">squid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="squid.html">Squid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apache.html">Apache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="litespeed.html">LiteSpeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tomcat.html">Tomcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="splunk.html">Splunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zabbix.html">Zabbix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nagios.html">Nagios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="redmine.html">Redmine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bind.html">Bind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samba.html">Samba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bacula.html">Bacula</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snort.html">Snort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mail/postfix.html">Postfix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mail/sendmail.html">Sendmail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keepalive.html">Keepalive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pacemaker.html">Pacemaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corosync.html">Corosync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drdb.html">DRDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="haproxy.html">HAProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openvpn.html">OpenVPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openam.html">OpenAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keycloak.html">KeyCloak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elasticsearch.html">Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kibana.html">Kibana</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openldap.html">OpenLDAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kafka.html">Apache Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logstash.html">Logstash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fluentd.html">Fluentd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apache_hadoop.html">Apache Hadoop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apache_spark.html">Apache Spark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openshift.html">Openshift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="puppet.html">Puppet</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Vagrant:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Database:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="vagrant.html">VAGRANT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/maria.html">MariaDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mongo.html">Mongo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/oracle.html">OracleDatabase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/cassandra.html">Cassandra</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cloud:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cloud/index.html">Cloud Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloud/aspire.html">ASPIRE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloud/aws.html">AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloud/gcp.html">Google Cloud Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloud/azure.html">Microsoft Azure</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Virtualization:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/index.html">Virtualization Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/vagrant.html">VAGRANT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/virtualbox.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/kvm.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/xen.html">Xen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/hyper-v.html">Hyper-v</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/esxi.html">VMware ESXi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/kubernetes.html">Kubernetes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="framework/django.html">Django</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitlab.html">Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logrotate.html">Logrotate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html">SHELL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html#z-shell">Z shell</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TextEditor:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="texteditor/vim.html">VIM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="texteditor/emacs.html">Emacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="texteditor/sakura.html">サクラエディタ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="texteditor/vscode.html">Visual Studio Code</a></li>
 </ul>
 
             
@@ -210,19 +309,91 @@ yum install -y policycoreutils-python       # CentOS7,
 <span class="n">semanage</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">LABELTYPE</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1">#</span>
 </pre></div>
 </div>
+<p>
+Package</p>
+<p>&gt;yum install -y policycoreutils-python-utils</p>
+<p># 無効から有効にする際の注意点
+無効状態から直接有効にするとラベルが適切でないものがある場合起動しない場合がある。
+その為、下記の手順を実施して一度Permissiveで起動後に有効化する。</p>
+<p># ルートディレクトリに.autorelabel を作成する
+root&gt; touch .autorelabel</p>
+<p># Permissiveに変更して起動させる</p>
+<p># Enforcingで起動
+&gt; vi /etc/selinux/config ——————————</p>
+<hr class="docutils" />
+<p># 参照権限の付与
+&gt; semanage fcontext -a -t httpd_sys_content_t “&lt;XXX&gt;”</p>
+<p>&gt; setsebool -P httpd_can_network_connect_db 1 # 要確認 -&gt; webserver経由でDBアクセスできる設定
+&gt; setsebool -P httpd_can_network_connect=on</p>
+<p>## よく使うコマンド————————————</p>
+<p># portの追加
+&gt; semanage port -a -t &lt;ssh_port_t&gt; -p tcp &lt;PORT_NUMBER&gt; # Ex.ssh_port_t</p>
+<p># portの削除
+&gt; semanage port -d -t &lt;TYPE_LABEL&gt; -p tcp &lt;PORT_NUMBER&gt;</p>
+<p>#
+&gt; semanage fcontext –list | grep httpd_config_t</p>
+<p># コンテキスト定義ルール一覧表示
+&gt; semanage fcontext -l</p>
+<p># SELinux のタイプ(type)一覧表示
+&gt; seinfo -t</p>
+<p># SELinuxのClassとPermission一覧表示
+&gt; seinfo -x -c</p>
+<p># 定義したRuleの削除
+semanage fcontext -d -e &lt;/var/www&gt; &lt;/var/test_www&gt;</p>
+<p># 組み込みルールのステータスを確認
+&gt; getsebool -a  # grep で絞り込む getsebool -a | grep http</p>
+<p># 設定状態の確認(SELinux の個別追加設定した内容を表示(ただしsemodule等で追加したモジュール情報は見れない))
+&gt; semanage export</p>
+<p># AVCの確認
+&gt; sesearch -A -s httpd_t -b httpd_can_network_connect_db -p name_connect
+# 上記で許可されているPortの確認
+&gt; seinfo –protocol=tcp –port | grep -E ‘mongod_port_t|gds_db_port_t|mssql_port_t|oracle_port_t|postgresql_port_t|mysqld_port_t’</p>
+<p>## —————————————————-</p>
+<p># Nginxのドキュメントルートを変更した時のSELinuxの設定
+SELinuxでApacheで/var/wwwから変更した先のパスも許可する
+<a class="reference external" href="https://tex2e.github.io/blog/linux/selinux-httpd-change-documentroot">https://tex2e.github.io/blog/linux/selinux-httpd-change-documentroot</a></p>
+<p>&gt; ls -dZ &lt;/var/www&gt;
+&gt; semanage fcontext -a -e &lt;/var/www&gt; &lt;/var/test_www&gt;   # /var/www=参照するLabelのdir /var/test_www=対象とするdir</p>
+<p># Policyの確認
+&gt; semanage fcontext -l</p>
+<p># restoreconコマンドで反映させる
+&gt; restorecon -R -v &lt;/var/test_www&gt;</p>
+<p># chcon
+chcon -u &lt;XX&gt; &lt;FILENAME&gt;
+chcon system_u:object_r:mongod_var_lib_t:s0 &lt;FILENAME&gt;</p>
+<p># SELinux関連のトラブルシュート
+* Resolving SELinux Security Exceptions
+<a class="reference external" href="https://www.nginx.com/blog/using-nginx-plus-with-selinux/">https://www.nginx.com/blog/using-nginx-plus-with-selinux/</a></p>
+<blockquote>
+<div><p>&gt; cat /var/log/audit/audit.log | grep denied</p>
+<p># 番号でGrep
+&gt;grep &lt;1415714880.156:29&gt; /var/log/audit/audit.log | audit2why</p>
+</div></blockquote>
+<div class="section" id="ref">
+<h3>Ref<a class="headerlink" href="#ref" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>とほほのSELinux入門
+<a class="reference external" href="https://www.tohoho-web.com/ex/selinux.html">https://www.tohoho-web.com/ex/selinux.html</a></p>
+<p>SELinux のコンテキスト定義ルール一覧表示
+<a class="reference external" href="https://milestone-of-se.nesuke.com/sv-advanced/selinux/config-list-add-del/">https://milestone-of-se.nesuke.com/sv-advanced/selinux/config-list-add-del/</a></p>
+<p>RedHatでPHPからDBサーバに接続できないときはSELinuxの設定が原因かも?
+<a class="reference external" href="https://dev.classmethod.jp/articles/redhat-selinx-might-block-network-connection-to-servers-from-apache-php/">https://dev.classmethod.jp/articles/redhat-selinx-might-block-network-connection-to-servers-from-apache-php/</a>
+‘’)))””</p>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="ssh">
 <h3>sshの…<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-ssh notranslate"><div class="highlight"><pre><span></span>semanage port --list | grep ssh             # sshのLabel確認
+<div class="highlight-ssh notranslate"><div class="highlight"><pre><span></span>semanage port --list | grep ssh  # sshのLabel確認
 semanage port -a -t ssh_port_t -p tcp 20000 # 20000ポートにssh_port_tのラベルを設定
 </pre></div>
 </div>
 </div>
 <div class="section" id="http">
 <h3>http<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span>semanage port --list | grep http             # httpのLabel確認
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span>semanage port --list | grep http  # httpのLabel確認
 semanage port -a -t http_port_t -p tcp 20000 # 20000ポートにhttp_port_tのラベルを設定
 </pre></div>
 </div>
@@ -236,7 +407,7 @@ semanage port -a -t http_port_t -p tcp 20000 # 20000ポートにhttp_port_tの�
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="link.html" class="btn btn-neutral float-right" title="Link" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="python.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="main.html" class="btn btn-neutral float-left" title="main" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
