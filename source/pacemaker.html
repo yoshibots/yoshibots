@@ -362,19 +362,19 @@ systemd     # Clusterリソースで制御する為自動起動をdisabledに設
 <span class="c1"># 既存のノードから コピー/etc/corosync/corosync.conf</span>
 </pre></div>
 </div>
-<p>## ノード追加手順 end</p>
 <p>■ よく使用するコマンド</p>
 <p>クラスターの操作</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">pcs</span> <span class="n">status</span>  <span class="c1"># クラスタの状態の確認</span>
-  <span class="n">pcs</span> <span class="n">config</span>  <span class="c1"># クラスターの全設定を表示</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pcs</span> <span class="n">status</span>  <span class="c1"># クラスタの状態の確認</span>
+<span class="n">pcs</span> <span class="n">config</span>  <span class="c1"># クラスターの全設定を表示</span>
 
-  <span class="n">pcs</span> <span class="n">cluster</span> <span class="n">status</span>  <span class="c1">#</span>
-
-<span class="c1"># Corosyncによるサーバ間通信状況を確認 # &quot;status&quot;が&quot;active&quot;かつ&quot;no faults&quot;であれば、問題なく通信が行えている。</span>
-<span class="o">&gt;</span> <span class="n">corosync</span><span class="o">-</span><span class="n">cfgtool</span> <span class="o">-</span><span class="n">s</span>
+<span class="n">pcs</span> <span class="n">cluster</span> <span class="n">status</span>  <span class="c1">#</span>
 </pre></div>
 </div>
-<p># Cluster 起動 <a href="#id2"><span class="problematic" id="id3">*</span></a>全ノード?</p>
+<dl class="simple">
+<dt># Corosyncによるサーバ間通信状況を確認 # “status”が”active”かつ”no faults”であれば、問題なく通信が行えている。</dt><dd><p>&gt; corosync-cfgtool -s</p>
+</dd>
+</dl>
+<p># Cluster 起動 全ノード?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">pcs</span> <span class="n">cluster</span> <span class="n">start</span> <span class="o">--</span><span class="nb">all</span>
   <span class="n">pcs</span> <span class="n">cluster</span> <span class="n">stop</span> <span class="o">--</span><span class="nb">all</span>    <span class="c1"># Cluster 停止</span>
   <span class="n">pcs</span> <span class="n">cluster</span> <span class="n">start</span> <span class="o">&lt;</span><span class="n">NODE_NAME</span><span class="o">&gt;</span>    <span class="c1"># node個別に起動する</span>
@@ -385,36 +385,33 @@ systemd     # Clusterリソースで制御する為自動起動をdisabledに設
 <span class="c1"># リソースの操作-------------</span>
 
 <span class="c1"># 表示</span>
-<span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">resource</span> <span class="n">show</span>  <span class="c1">#リソース一覧を表示</span>
-<span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">resource</span> <span class="n">show</span> <span class="o">--</span><span class="n">full</span>  <span class="c1">#すべてのリソースのパラメータを表示</span>
-<span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">resource</span> <span class="n">show</span> <span class="s2">&quot;resource_id&quot;</span>  <span class="c1">#指定リソースのパラメータを表示</span>
 
-<span class="c1"># 削除</span>
-<span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">resource</span> <span class="n">delete</span> <span class="s2">&quot;resource_id&quot;</span>
+<span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span>
 
-<span class="c1"># Failcountのリセット(いずれか1つのnodeで実施)</span>
-<span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">resource</span> <span class="n">cleanup</span>
+ <span class="n">pcs</span> <span class="n">resource</span> <span class="n">show</span>  <span class="c1">#リソース一覧を表示</span>
+ <span class="n">pcs</span> <span class="n">resource</span> <span class="n">show</span> <span class="o">--</span><span class="n">full</span>  <span class="c1">#すべてのリソースのパラメータを表示</span>
+ <span class="n">pcs</span> <span class="n">resource</span> <span class="n">show</span> <span class="s2">&quot;resource_id&quot;</span>  <span class="c1">#指定リソースのパラメータを表示</span>
 
-<span class="c1"># リソースグループの移動(FO)</span>
-<span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">resource</span> <span class="n">move</span> <span class="o">&lt;</span><span class="n">rg01</span><span class="o">&gt;</span>
-<span class="c1"># 元に戻す</span>
-<span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">resource</span> <span class="n">clear</span> <span class="o">&lt;</span><span class="n">rg01</span><span class="o">&gt;</span>
+ <span class="n">pcs</span> <span class="n">resource</span> <span class="n">delete</span> <span class="s2">&quot;resource_id&quot;</span>  <span class="c1"># 削除</span>
+
+ <span class="n">pcs</span> <span class="n">resource</span> <span class="n">cleanup</span>  <span class="c1"># Failcountのリセット(いずれか1つのnodeで実施)</span>
+ <span class="n">pcs</span> <span class="n">resource</span> <span class="n">move</span> <span class="o">&lt;</span><span class="n">rg01</span><span class="o">&gt;</span>  <span class="c1"># リソースグループの移動(FO)</span>
+ <span class="n">pcs</span> <span class="n">resource</span> <span class="n">clear</span> <span class="o">&lt;</span><span class="n">rg01</span><span class="o">&gt;</span> <span class="c1"># 元に戻す</span>
 
 
-<span class="c1"># Create VIP</span>
-<span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">resource</span> <span class="n">create</span> <span class="n">VIP</span> <span class="n">ocf</span><span class="p">:</span><span class="n">heartbeat</span><span class="p">:</span><span class="n">IPaddr2</span> \
-    <span class="n">ip</span><span class="o">=&lt;</span><span class="mf">192.168</span><span class="o">.</span><span class="n">XX</span><span class="o">.</span><span class="n">XX</span><span class="o">&gt;</span> <span class="n">cidr_netmask</span><span class="o">=</span><span class="mi">24</span> <span class="n">op</span> <span class="n">monitor</span> <span class="n">interval</span><span class="o">=</span><span class="mi">10</span><span class="n">s</span>
+ <span class="c1"># Create VIP</span>
+ <span class="n">pcs</span> <span class="n">resource</span> <span class="n">create</span> <span class="n">VIP</span> <span class="n">ocf</span><span class="p">:</span><span class="n">heartbeat</span><span class="p">:</span><span class="n">IPaddr2</span> \
+     <span class="n">ip</span><span class="o">=&lt;</span><span class="mf">192.168</span><span class="o">.</span><span class="n">XX</span><span class="o">.</span><span class="n">XX</span><span class="o">&gt;</span> <span class="n">cidr_netmask</span><span class="o">=</span><span class="mi">24</span> <span class="n">op</span> <span class="n">monitor</span> <span class="n">interval</span><span class="o">=</span><span class="mi">10</span><span class="n">s</span>
 
-    <span class="c1"># Disabled STONITH</span>
-    <span class="o">&gt;</span> <span class="n">pcs</span> <span class="nb">property</span> <span class="nb">set</span> <span class="n">stonith</span><span class="o">-</span><span class="n">enabled</span><span class="o">=</span><span class="n">false</span>
+ <span class="c1"># Disabled STONITH</span>
+ <span class="n">pcs</span> <span class="nb">property</span> <span class="nb">set</span> <span class="n">stonith</span><span class="o">-</span><span class="n">enabled</span><span class="o">=</span><span class="n">false</span>
 
-    <span class="c1"># 制約の操作----------------</span>
+ <span class="c1"># 制約の操作</span>
 
-    <span class="c1"># 設定した制約の表示</span>
-    <span class="n">pcs</span> <span class="n">constraint</span> <span class="nb">list</span> <span class="n">show</span>
+ <span class="n">pcs</span> <span class="n">constraint</span> <span class="nb">list</span> <span class="n">show</span>  <span class="c1"># 設定した制約の表示</span>
 
-    <span class="c1"># リソースセットの作成</span>
-    <span class="o">&gt;</span> <span class="n">pcs</span> <span class="n">constraint</span> <span class="n">order</span> <span class="nb">set</span> <span class="o">&lt;</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">c</span><span class="o">&gt;</span> <span class="c1"># a,b,cという3つのリソースを順序付けされたひとつのリソースセットとして設定</span>
+ <span class="c1"># リソースセットの作成</span>
+ <span class="n">pcs</span> <span class="n">constraint</span> <span class="n">order</span> <span class="nb">set</span> <span class="o">&lt;</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">c</span><span class="o">&gt;</span> <span class="c1"># a,b,cという3つのリソースを順序付けされたひとつのリソースセットとして設定</span>
 </pre></div>
 </div>
 <p># プロパティの操作</p>
@@ -449,10 +446,8 @@ Pacemakerの概要（概要）
 <p>4.4. Managing Nodes in a Corosync-Based Cluster
 <a class="reference external" href="https://clusterlabs.org/pacemaker/doc/deprecated/en-US/Pacemaker/1.1/html/Pacemaker_Explained/_managing_nodes_in_a_corosync_based_cluster.html">https://clusterlabs.org/pacemaker/doc/deprecated/en-US/Pacemaker/1.1/html/Pacemaker_Explained/_managing_nodes_in_a_corosync_based_cluster.html</a></p>
 </div></blockquote>
-<dl class="simple">
-<dt><a href="#id4"><span class="problematic" id="id5">`インフラ構築手順書(PaceMaker+MySQLレプリケーション構築) &lt;&gt;`_</span></a></dt><dd><p><a class="reference external" href="http://infra.blog.shinobi.jp/Entry/29/">http://infra.blog.shinobi.jp/Entry/29/</a></p>
-</dd>
-</dl>
+<p><a href="#id2"><span class="problematic" id="id3">`インフラ構築手順書(PaceMaker+MySQLレプリケーション構築) &lt;&gt;`_</span></a>
+<a class="reference external" href="http://infra.blog.shinobi.jp/Entry/29/">http://infra.blog.shinobi.jp/Entry/29/</a></p>
 </div>
 </div>
 

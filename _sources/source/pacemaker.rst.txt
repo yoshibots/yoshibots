@@ -105,8 +105,6 @@ Firewall
 
  # 既存のノードから コピー/etc/corosync/corosync.conf
 
-## ノード追加手順 end
-
 ■ よく使用するコマンド
 
 クラスターの操作
@@ -118,56 +116,53 @@ Firewall
 
    pcs cluster status  #
 
- # Corosyncによるサーバ間通信状況を確認 # "status"が"active"かつ"no faults"であれば、問題なく通信が行えている。
+# Corosyncによるサーバ間通信状況を確認 # "status"が"active"かつ"no faults"であれば、問題なく通信が行えている。
  > corosync-cfgtool -s
- 
-# Cluster 起動 *全ノード?
+
+# Cluster 起動 全ノード?
 
 .. code-block::
-   
+
    pcs cluster start --all
    pcs cluster stop --all    # Cluster 停止
    pcs cluster start <NODE_NAME>    # node個別に起動する
    pcs cluster stop <NODE_NAME> --force    # node個別に停止
    pcs cluster destroy# Cluster設定の削除
    pcs cluster standby <node name> [--all] # 特定nodeをスタンバイに移行
- 
+
  # リソースの操作-------------
- 
+
  # 表示
- > pcs resource show  #リソース一覧を表示
- > pcs resource show --full  #すべてのリソースのパラメータを表示
- > pcs resource show "resource_id"  #指定リソースのパラメータを表示
- 
- # 削除
- > pcs resource delete "resource_id"
- 
- # Failcountのリセット(いずれか1つのnodeで実施)
- > pcs resource cleanup
- 
- # リソースグループの移動(FO)
- > pcs resource move <rg01>
- # 元に戻す
- > pcs resource clear <rg01>
- 
- 
- # Create VIP
- > pcs resource create VIP ocf:heartbeat:IPaddr2 \
-     ip=<192.168.XX.XX> cidr_netmask=24 op monitor interval=10s
-     
-     # Disabled STONITH
-     > pcs property set stonith-enabled=false
-     
-     # 制約の操作----------------
-     
-     # 設定した制約の表示
-     pcs constraint list show
-     
-     # リソースセットの作成
-     > pcs constraint order set <a> <b> <c> # a,b,cという3つのリソースを順序付けされたひとつのリソースセットとして設定
-     
+
+ .. code-block::
+
+  pcs resource show  #リソース一覧を表示
+  pcs resource show --full  #すべてのリソースのパラメータを表示
+  pcs resource show "resource_id"  #指定リソースのパラメータを表示
+
+  pcs resource delete "resource_id"  # 削除
+
+  pcs resource cleanup  # Failcountのリセット(いずれか1つのnodeで実施)
+  pcs resource move <rg01>  # リソースグループの移動(FO)
+  pcs resource clear <rg01> # 元に戻す
+
+
+  # Create VIP
+  pcs resource create VIP ocf:heartbeat:IPaddr2 \
+      ip=<192.168.XX.XX> cidr_netmask=24 op monitor interval=10s
+
+  # Disabled STONITH
+  pcs property set stonith-enabled=false
+
+  # 制約の操作
+
+  pcs constraint list show  # 設定した制約の表示
+
+  # リソースセットの作成
+  pcs constraint order set <a> <b> <c> # a,b,cという3つのリソースを順序付けされたひとつのリソースセットとして設定
+
 # プロパティの操作
-     
+
 .. code-block::
 
   pcs property list
@@ -204,12 +199,12 @@ PATH
      
      6.4. 制約の表示
      https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/6/html/configuring_the_red_hat_high_availability_add-on_with_pacemaker/s1-constraintlist-haar
-     
+
      pacemaker Q&A
      https://www.web-dev-qa-db-ja.com/ja/pacemaker/
-     
+
      4.4. Managing Nodes in a Corosync-Based Cluster
      https://clusterlabs.org/pacemaker/doc/deprecated/en-US/Pacemaker/1.1/html/Pacemaker_Explained/_managing_nodes_in_a_corosync_based_cluster.html
-     
+
 `インフラ構築手順書(PaceMaker+MySQLレプリケーション構築) <>`_
-     http://infra.blog.shinobi.jp/Entry/29/
+http://infra.blog.shinobi.jp/Entry/29/
