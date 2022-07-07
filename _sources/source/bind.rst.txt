@@ -5,14 +5,14 @@ Bind
 Install
 =======
 
-.. code-block:: test
+.. code-block::
 
    dnf install -y bind
 
 Commonly used
 =============
 
-.. code-block:: 
+.. code-block::
 
    named named-checkconf # 構文確認
 
