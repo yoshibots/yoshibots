@@ -6,45 +6,42 @@ Logrotate
 # 使い方
 /etc/logrotate.d/配下に設定ファイル(任意の名前)を作成するだけ。
  
- # 原理
+# 原理
 logrotateは、ローテーションの状態を保持しておくlogrotate.stateに基づいて実行される。
 
- # その他
-_設定ファイル内のコメントは#
+# その他
+設定ファイル内のコメントは
 
 * /etc/logrotate.conf # Default設定
-  * /etc/logrotate.d/# 配下に個別の設定を書く
- 
-  # 最後にローテーションした日時を管理するファイル（OSやバージョンによりパスが違う） 
+* /etc/logrotate.d/# 配下に個別の設定を書く
+
+# 最後にローテーションした日時を管理するファイル（OSやバージョンによりパスが違う） 
   # /var/lib/logrotate/logrotate.status
-  
-  
-  # OPTIONS
-  
-  @ man logratate を実行して確認するのが正確。
-  
-  
-  
-  # EXAMPLE  +
-  
-  # Debug (-d) 
-  > logrotate -d /etc/logrotate.d/<FILENAME>
-  
-  # 強制実行 (-f)
-  > logrotate -f /etc/logrotate.d/<FILENAME> # 実行記録が/var/lib/logrotate/logrotate.statusに残る
-  
-  # RELATION +
-  
-  # journald
+
+
+# OPTIONS
+
+@ man logratate を実行して確認するのが正確。
+
+# EXAMPLE
+
+# Debug (-d) 
+> logrotate -d /etc/logrotate.d/<FILENAME>
+
+# 強制実行 (-f)
+> logrotate -f /etc/logrotate.d/<FILENAME> # 実行記録が/var/lib/logrotate/logrotate.statusに残る
+
+# RELATION +
+
+# journald
 RateLimitInterval=30s
 RateLimitBurst=1000
- 
- 
- # Ref
- 
- logrotate の 1 日目は rotate されない
- http://var.blog.jp/archives/83318058.html
- 
+
+
+# Ref
+
+`logrotate の 1 日目は rotate されない <http://var.blog.jp/archives/83318058.html>`_
+
  【日本語man】logrotateの全オプション解説
  https://hackers-high.com/linux/man-jp-logrotate/#copytruncate
  

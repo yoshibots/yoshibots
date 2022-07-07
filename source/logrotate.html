@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Logrotate &mdash; Linux v1.0 documentation</title>
+  <title>Logrotate &mdash; Blue Field v1.0 documentation</title>
   
 
   
@@ -73,7 +73,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Linux
+            <a href="../index.html" class="icon icon-home"> Blue Field
           
 
           
@@ -121,7 +121,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Network:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="network/network.html">NetworkInterface (NIC)  +</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network/network.html">NetworkInterface (NIC)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
@@ -237,7 +237,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Linux</a>
+          <a href="../index.html">Blue Field</a>
         
       </nav>
 
@@ -294,37 +294,33 @@
 <p>&#64; man logrotate</p>
 <p># 使い方
 /etc/logrotate.d/配下に設定ファイル(任意の名前)を作成するだけ。</p>
-<blockquote>
-<div><p># 原理</p>
-</div></blockquote>
-<p>logrotateは、ローテーションの状態を保持しておくlogrotate.stateに基づいて実行される。</p>
-<blockquote>
-<div><p># その他</p>
-</div></blockquote>
-<p>_設定ファイル内のコメントは#</p>
-<ul>
-<li><p>/etc/logrotate.conf # Default設定
-* /etc/logrotate.d/# 配下に個別の設定を書く</p>
-<p># 最後にローテーションした日時を管理するファイル（OSやバージョンによりパスが違う）
-# /var/lib/logrotate/logrotate.status</p>
+<p># 原理
+logrotateは、ローテーションの状態を保持しておくlogrotate.stateに基づいて実行される。</p>
+<p># その他
+設定ファイル内のコメントは</p>
+<ul class="simple">
+<li><p>/etc/logrotate.conf # Default設定</p></li>
+<li><p>/etc/logrotate.d/# 配下に個別の設定を書く</p></li>
+</ul>
+<dl class="simple">
+<dt># 最後にローテーションした日時を管理するファイル（OSやバージョンによりパスが違う）</dt><dd><p># /var/lib/logrotate/logrotate.status</p>
+</dd>
+</dl>
 <p># OPTIONS</p>
 <p>&#64; man logratate を実行して確認するのが正確。</p>
-<p># EXAMPLE  +</p>
+<p># EXAMPLE</p>
 <p># Debug (-d)
 &gt; logrotate -d /etc/logrotate.d/&lt;FILENAME&gt;</p>
 <p># 強制実行 (-f)
 &gt; logrotate -f /etc/logrotate.d/&lt;FILENAME&gt; # 実行記録が/var/lib/logrotate/logrotate.statusに残る</p>
 <p># RELATION +</p>
-<p># journald</p>
-</li>
-</ul>
-<p>RateLimitInterval=30s
+<p># journald
+RateLimitInterval=30s
 RateLimitBurst=1000</p>
+<p># Ref</p>
+<p><a class="reference external" href="http://var.blog.jp/archives/83318058.html">logrotate の 1 日目は rotate されない</a></p>
 <blockquote>
-<div><p># Ref</p>
-<p>logrotate の 1 日目は rotate されない
-<a class="reference external" href="http://var.blog.jp/archives/83318058.html">http://var.blog.jp/archives/83318058.html</a></p>
-<p>【日本語man】logrotateの全オプション解説
+<div><p>【日本語man】logrotateの全オプション解説
 <a class="reference external" href="https://hackers-high.com/linux/man-jp-logrotate/#copytruncate">https://hackers-high.com/linux/man-jp-logrotate/#copytruncate</a></p>
 <p>末尾以外の場所に日付を挿入する
 <a class="reference external" href="https://qiita.com/tbpgr/items/a8499496fca6f5aa958b">https://qiita.com/tbpgr/items/a8499496fca6f5aa958b</a></p>
