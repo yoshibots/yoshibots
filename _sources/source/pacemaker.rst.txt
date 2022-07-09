@@ -3,6 +3,7 @@ Pacemaker
 =========
 
 # 事前知識
+-----------
 
 $ pcsd -> クラスタ管理ツール
 $ Pacemaker（Ver1.1.23）- リソース制御機能
@@ -10,11 +11,13 @@ $ corosync(Ver2.4.5) - クラスタ制御機能
 $ RA(リソースエージェント)はシェルスクリプトで作成されており、OCF(Open Cluster Framework)という仕様に従えば、独自のものを作成し使用することができる
 
 # 事前準備
+-----------
 
 DNS  # 必要に応じで/etc/hostsなどに名前解決できるようにしておく
 systemd     # Clusterリソースで制御する為自動起動をdisabledに設定しておく
 
 Firewall
+--------
 
 .. code-block::
 
@@ -92,7 +95,7 @@ Firewall
    crm_verify -L -V
 
 
-## ノード追加手順
+#ノード追加手順
 
 !) 追加するHostを/etc/hostsやDNSサーバに双方向登録しておく
 
@@ -106,6 +109,7 @@ Firewall
  # 既存のノードから コピー/etc/corosync/corosync.conf
 
 ■ よく使用するコマンド
+-------------------------
 
 クラスターの操作
 
@@ -171,40 +175,24 @@ Firewall
 PATH
 # RAスクリプト -> /lib/ocf/resource.d/
      
-     参考資料
-     Pacemakerの概要（概要）
-     https://linux-ha.osdn.jp/wp/manual/pacemaker_outline
-     
-     とほほのPacemaker入門（概要※ipv6は無効化しないこと）
-     https://www.tohoho-web.com/ex/pacemaker.html
-     
-     How to Set Up Nginx High Availability Cluster using Pacemaker on CentOS 7(構築おススメ)
-     https://www.rosehosting.com/blog/how-to-set-up-nginx-high-availability-cluster-using-pacemaker-on-centos-7/
-     
-     CENTOS7にPACEMAKERをインストールしてみる（構築時に参照）
-     https://sky-joker.tech/2017/03/26/centos7%E3%81%ABpacemaker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B/
-     
-     Pacemaker/Corosync の設定値について
-     https://www.sraoss.co.jp/tech-blog/pacemaker/pacemaker-config-values/
-     
-     【RHEL 7】High Availability アドオンのリソースの設定
-     https://nwengblog.com/rhel-ha-resource/
-     
-     Pacemakerクラスタ管理コマンドまとめ
-     https://kan3aa.hatenablog.com/entry/2015/11/14/194942
-     
-     
-     Linuxで高可用性/クラスタリングを構成および維持する方法(構築)
-     https://ja.linux-console.net/?p=120
-     
-     6.4. 制約の表示
-     https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/6/html/configuring_the_red_hat_high_availability_add-on_with_pacemaker/s1-constraintlist-haar
+参考資料
+---------
 
-     pacemaker Q&A
-     https://www.web-dev-qa-db-ja.com/ja/pacemaker/
+Pacemakerの概要（概要）
+https://linux-ha.osdn.jp/wp/manual/pacemaker_outline
 
-     4.4. Managing Nodes in a Corosync-Based Cluster
-     https://clusterlabs.org/pacemaker/doc/deprecated/en-US/Pacemaker/1.1/html/Pacemaker_Explained/_managing_nodes_in_a_corosync_based_cluster.html
+とほほのPacemaker入門（概要※ipv6は無効化しないこと）
+https://www.tohoho-web.com/ex/pacemaker.html
 
-`インフラ構築手順書(PaceMaker+MySQLレプリケーション構築) <>`_
-http://infra.blog.shinobi.jp/Entry/29/
+How to Set Up Nginx High Availability Cluster using Pacemaker on CentOS 7(構築おススメ)
+https://www.rosehosting.com/blog/how-to-set-up-nginx-high-availability-cluster-using-pacemaker-on-centos-7/
+
+| `CENTOS7にPACEMAKERをインストールしてみる <https://sky-joker.tech/2017/03/26/centos7%E3%81%ABpacemaker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B/>`_
+| `Pacemaker/Corosync の設定値について <https://www.sraoss.co.jp/tech-blog/pacemaker/pacemaker-config-values/>`_
+| `【RHEL 7】High Availability アドオンのリソースの設定 <https://nwengblog.com/rhel-ha-resource/>`_
+| `Pacemakerクラスタ管理コマンドまとめ <https://kan3aa.hatenablog.com/entry/2015/11/14/194942>`_
+| `Linuxで高可用性/クラスタリングを構成および維持する方法(構築) <https://ja.linux-console.net/?p=120>`_
+| `6.4. 制約の表示 <https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/6/html/configuring_the_red_hat_high_availability_add-on_with_pacemaker/s1-constraintlist-haar>`_
+| `pacemaker Q&A <https://www.web-dev-qa-db-ja.com/ja/pacemaker/>`_
+| `4. Managing Nodes in a Corosync-Based Cluster <https://clusterlabs.org/pacemaker/doc/deprecated/en-US/Pacemaker/1.1/html/Pacemaker_Explained/_managing_nodes_in_a_corosync_based_cluster.html>`_
+| `インフラ構築手順書(PaceMaker+MySQLレプリケーション構築) <http://infra.blog.shinobi.jp/Entry/29/>`_

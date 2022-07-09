@@ -1,0 +1,20 @@
+=======
+Ansible
+=======
+
+Install
+=======
+
+.. code-block::
+
+   dnf install -y ansible-core
+
+
+Case
+====
+
+Reference
+=========
+
+`Ansible Documentation <https://docs.ansible.com/>`_
+----------------------------------------------------

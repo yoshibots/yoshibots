@@ -1,0 +1,23 @@
+##########
+MIDDLEWARE
+##########
+
+
+.. include:: ./middleware/openam.rst
+.. include:: ./middleware/splunk.rst
+.. include:: ./middleware/nagios.rst
+.. include:: ./middleware/nginx.rst
+.. include:: ./middleware/apache.rst
+.. include:: ./middleware/zabbix.rst
+.. include:: ./middleware/snort.rst
+.. include:: ./middleware/pacemaker.rst
+.. include:: ./middleware/corosync.rst
+.. include:: ./middleware/squid.rst
+.. include:: ./middleware/samba.rst
+.. include:: ./middleware/redmine.rst
+.. include:: ./middleware/puppet.rst
+.. include:: ./middleware/openvpn.rst
+.. include:: ./middleware/openshift.rst
+.. include:: ./middleware/logstash.rst
+.. include:: ./middleware/tomcat.rst
+.. include:: ./middleware/openam.rst

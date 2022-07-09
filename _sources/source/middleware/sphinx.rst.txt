@@ -1,0 +1,13 @@
+======
+Sphinx
+======
+
+
+
+faviconの設定
+---------------
+
+conf.pyにhtml_favicon = 'favicon.icoを追記する。
+conf.pyからの相対パスで配置となる。
+
+`設定 <https://www.sphinx-doc.org/ja/master/usage/configuration.html>`_

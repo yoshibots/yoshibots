@@ -1,0 +1,12 @@
+###
+OS
+###
+
+.. include:: ./os/redhat.rst
+.. include:: ./os/ubuntu.rst
+.. include:: ./os/centos.rst
+.. include:: ./os/windows.rst
+.. include:: ./os/kalilinux.rst
+.. include:: ./os/archlinux.rst
+.. include:: ./os/solaris.rst
+.. include:: ./os/suselinux.rst

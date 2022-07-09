@@ -1,0 +1,72 @@
+=======
+OpenVPN
+=======
+
+VPNの認証方式
+1.静的鍵(static key) # 1対1の設定しかできない
+2.証明書認証
+3.二要素認証
+
+OpenVPNで使用できる認証方法
+https://www.openvpn.jp/document/authentication-methods/
+
+
+OpenVPN Server
+----------------
+
+`OpenVPN.JP <https://www.openvpn.jp/>`_
+
+server.confを編集する
+
+
+
+Openvpn Client
+---------------
+
+Download
+---------
+
+`vpnux Client <https://www.vpnux.jp/intro>`_
+
+
+.. note::
+  Server側の設定に合わせること
+
+# Firewall
+> firewall-cmd --add-port=1194/udp --permanent #UDP
+> firewall-cmd --add-port=1194/tcp --permanent #TCP ; 要確認 Server側がtcpでlistenしていたので解放
+> firewall-cmd --reload
+
+# epel repositoryのインストール
+> yum install -y epel-release
+
+# 導入
+> yum install -y --enablerepo=epel openvpn
+
+
+# Openvpn serverのserver.confに追記
+push "route <IP_ADDRESS> 255.255.255.0"
+
+
+# 
+-remote my-server-1 1194
++remote <ServerIP> 1194
+
+
+# 実行
+
+> cd /etc/openvpn/client/ && openvpn client.conf
+
+* Errorの為、調査
+  
+verbオプションを変更する事でログのデバッグレベルを変更できる
+
+
+`OpenVPN接続ログと設定ファイルはどこにありますか？ <https://www.web-dev-qa-db-ja.com/ja/log/openvpn%E6%8E%A5%E7%B6%9A%E3%83%AD%E3%82%B0%E3%81%A8%E8%A8%AD%E5%AE%9A%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AF%E3%81%A9%E3%81%93%E3%81%AB%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F/961552820/>`_
+
+`OpenVPN don't start: --cert fails with 'client.crt': No such file or directory <https://serverfault.com/questions/673984/openvpn-dont-start-cert-fails-with-client-crt-no-such-file-or-directory>`_
+
+
+
+# トンネルインターフェースを作ってみた
+> nmcli c a type tun ifname tun0 con-name tun0

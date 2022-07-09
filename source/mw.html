@@ -1,0 +1,679 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MIDDLEWARE &mdash; Blue Field v1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DATABASE" href="database.html" />
+    <link rel="prev" title="GO LANG" href="go.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6785010150916443"
+       crossorigin="anonymous">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4CD4ZD75QT"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4CD4ZD75QT');
+  </script>
+  </script>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Blue Field
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="os.html">OS</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="network.html">NETWORK</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Main:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selinux.html">SELinux</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="go.html">GO LANG</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MIDDLEWARE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#openam">OpenAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#splunk">Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nagios">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nginx">Nginx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apache">Apache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zabbix">Zabbix</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ready">Ready…</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#package">Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#firewall">Firewall</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selinux">SELinux</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">構築手順</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-repository">Add Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id37">設定ファイルの編集</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id38">自動起動の設定及び起動</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#next-step">Next Step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#case">Case</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#slack">Slackに通知する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id39">複数のSlackに通知を送りたい</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#zabbix-5-0-slack">Zabbix 5.0 で Slack にアラートを連携する</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#corosync">Corosync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#samba">Samba</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#redmine">Redmine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openvpn">OpenVPN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openshift">Openshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logstash">Logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tomcat">Tomcat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id41">OpenAM</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="database.html">DATABASE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cloud:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cloud/index.html">Cloud Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Virtualization:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/index.html">Virtualization Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/vagrant.html">VAGRANT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/virtualbox.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/kvm.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/xen.html">Xen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/hyper-v.html">Hyper-v</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/esxi.html">VMware ESXi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/kubernetes.html">Kubernetes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="framework/django.html">Django</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitlab.html">Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logrotate.html">Logrotate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html">SHELL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html#z-shell">Z shell</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="texteditor.html">TEXTEDITOR</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Blue Field</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>MIDDLEWARE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/mw.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="middleware">
+<h1>MIDDLEWARE<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="openam">
+<h2>OpenAM<a class="headerlink" href="#openam" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="splunk">
+<h2>Splunk<a class="headerlink" href="#splunk" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="nagios">
+<h2>Nagios<a class="headerlink" href="#nagios" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="nginx">
+<h2>Nginx<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h2>
+<p># 事前準備</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Firewall</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="nb">all</span>                       <span class="c1"># 確認</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">service</span><span class="o">=</span><span class="n">http</span> <span class="o">--</span><span class="n">permanent</span>   <span class="c1"># デフォルトポートの場合</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=&lt;</span><span class="n">XXX</span><span class="o">&gt;/</span><span class="n">tcp</span> <span class="o">--</span><span class="n">permanent</span> <span class="c1"># ポートを変更する場合</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">reload</span>
+</pre></div>
+</div>
+<p>SELinux
+semanage port -a -t http_port_t -p tcp &lt;8080&gt; # ポートを変更した場合はポートにラベルを割り当てる</p>
+<p># 構築手順</p>
+<p># Nginxのリポジトリを追加する
+# vi /etc/yum.repos.d/nginx.repoに下記を記載</p>
+<p># /etc/yum.repos.d/nginx.repo ————————
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/7/$basearch/
+gpgcheck=0
+enabled=1</p>
+<p># —————————————————-</p>
+<p># EPELリポジトリの追加
+sudo yum install epel-release</p>
+<p># Install
+yum install nginx</p>
+<p># とりあえずListen,server_nameだけ変更しておく</p>
+<p>vi /etc/nginx/conf.d/cnapp.conf</p>
+<p>## /etc/nginx/conf.d/cnapp.conf ———————–</p>
+<p>-listen 80;
++listen 8088;</p>
+<p>-server_name localhost;
++server_name cnweb3;</p>
+<hr class="docutils" />
+<dl>
+<dt># 自動起動を設定して起動する場合</dt><dd><p>systemctl enable –now nginx.service</p>
+<p>■ よく使用するコマンド</p>
+<p># 設定ファイルの構文確認
+&gt; nginx -t</p>
+<p># 設定ファイルのリロード
+&gt; systemctl reload nginx || &gt; nginx -s reload</p>
+<p># =================================================================+
+# Security対策                                                     +
+# =================================================================+</p>
+<p>Niktoによる脆弱性診断を行う</p>
+<dl>
+<dt>change port</dt><dd><p><a href="#id1"><span class="problematic" id="id2">|</span></a>__listen &lt;8088&gt;;</p>
+<dl>
+<dt>Hide version</dt><dd><p><a href="#id3"><span class="problematic" id="id4">|</span></a>__server_tokens off;</p>
+<dl>
+<dt>Etag</dt><dd><p><a href="#id5"><span class="problematic" id="id6">|</span></a>__etag off;</p>
+<dl>
+<dt>Clickjacking</dt><dd><p><a href="#id7"><span class="problematic" id="id8">|</span></a>__add_header x-frame-options (“DENY” | “SAMEORIGIN”) # SAMEORIGIN - 自身と生成元が同じフレーム内に限りページを表示
+XSS</p>
+<blockquote>
+<div><dl>
+<dt><a href="#id9"><span class="problematic" id="id10">|</span></a>__add_header x-content-type-options “nosniff”        # UserAgentがContent-typeに従わなければならない</dt><dd><p><a href="#id11"><span class="problematic" id="id12">|</span></a>__add_header x-xss-protection “1; mode=block”        # IE/Chrome/Safari においてXSS攻撃を検知してした際に読み込むことを防止する</p>
+<dl>
+<dt>MITM</dt><dd><dl>
+<dt><a href="#id13"><span class="problematic" id="id14">|</span></a>__add_header strict-transport-security “max-age=31536000; includeSubDomains” # HSTS TLS使用を強制する.</dt><dd><p>includeSubDomainsはポリシーをサブドメインにも適用する
+XST</p>
+<blockquote>
+<div><p><a href="#id15"><span class="problematic" id="id16">|</span></a>__NginxではデフォルトでTRACEメソッド許容していない。</p>
+<dl>
+<dt>Options - Indexes(autoindex)</dt><dd><p><a href="#id17"><span class="problematic" id="id18">|</span></a>__Nginxではデフォルトでインデックスページ非表示の為、不要。</p>
+<ul class="simple">
+<li><p>Option</p></li>
+</ul>
+<dl>
+<dt>Request size limit</dt><dd><p><a href="#id19"><span class="problematic" id="id20">|</span></a>__client_max_body_size &lt;1k&gt;; # リクエストヘッダを1kbに制限する</p>
+<p># Ref
+Top 7 HTTP security headers to specify and how to deploy them
+<a class="reference external" href="https://www-templarbit-com.translate.goog/blog/jp/2018/07/24/top-http-security-headers-and-how-to-deploy-them/?_x_tr_sl=ja&amp;_x_tr_tl=en&amp;_x_tr_hl=en&amp;_x_tr_pto=sc">https://www-templarbit-com.translate.goog/blog/jp/2018/07/24/top-http-security-headers-and-how-to-deploy-them/?_x_tr_sl=ja&amp;_x_tr_tl=en&amp;_x_tr_hl=en&amp;_x_tr_pto=sc</a></p>
+<p>Nginxセキュリティ設定
+<a class="reference external" href="https://qiita.com/hideji2/items/1421f9bff2a97a5e5794">https://qiita.com/hideji2/items/1421f9bff2a97a5e5794</a></p>
+<p># ——————————————————————+
+# WAF                                                               +
+# ——————————————————————+</p>
+<dl>
+<dt>設置形態により下記の種類にわけられる</dt><dd><dl>
+<dt><a href="#id21"><span class="problematic" id="id22">|</span></a>__SaaS型（クラウド型）</dt><dd><dl>
+<dt><a href="#id23"><span class="problematic" id="id24">|</span></a>__ゲートウェイ型（ネットワーク型）</dt><dd><p><a href="#id25"><span class="problematic" id="id26">|</span></a>__ホスト型（ソフトウェア型）</p>
+<p># Mod Security(ホスト型)
+# NAXSI</p>
+<p># ——————————————————————+
+# 国外からのアクセスを制限する                                      +
+# ——————————————————————+</p>
+<p>&#64;Nginxで国外からのWEBアクセスを遮断
+<a class="reference external" href="https://qiita.com/KensukeSakakibara/items/27d15975c754758321ad">https://qiita.com/KensukeSakakibara/items/27d15975c754758321ad</a></p>
+<p>&#64;Nginxで一部海外IPからのアクセスを遮断する
+<a class="reference external" href="https://programming-beginner-zeroichi.jp/articles/125">https://programming-beginner-zeroichi.jp/articles/125</a></p>
+<p>&gt; cd /etc/nginx/</p>
+<p>#
+&gt; wget <a class="reference external" href="http://nami.jp/ipv4bycc/cidr.txt.gz">http://nami.jp/ipv4bycc/cidr.txt.gz</a></p>
+<p>&gt; gunzip cidr.txt.gz</p>
+<p>&gt; sed -n ‘s/^JPt(.*)/allow 1;/p’ cidr.txt &gt; /etc/nginx/allowip.conf # Whitlist方式</p>
+<p># nginx.confに下記で記載</p>
+<p>/etc/nginx.conf —————————————————-
+http {</p>
+<blockquote>
+<div><dl>
+<dt>・・・</dt><dd><dl>
+<dt># Allow IP</dt><dd><dl>
+<dt>include /etc/nginx/allowip.conf;</dt><dd><p>deny all;</p>
+<blockquote>
+<div><p>include /etc/nginx/conf.d/<a href="#id27"><span class="problematic" id="id28">*</span></a>.conf;
+}
+/etc/nginx.conf end ————————————————</p>
+<p>&gt; nginx -s reload</p>
+<p># 検証
+VPNを用いて国外アクセスの検証を行う
+access forbidden by ruleと記載されることを確認</p>
+<p><a href="#id29"><span class="problematic" id="id30">*</span></a>IPが更新されるので定期的にリストをUpdateすることも必要なので暫定対応とする</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7">How To Install Nginx on CentOS 7</a></div>
+<div class="line"><a class="reference external" href="https://qiita.com/kidach1/items/985efebba639713c562e">IPベースでのアクセス制限の準備(中段)</a></div>
+<div class="line"><a class="reference external" href="https://www.mk-mode.com/blog/2013/02/17/nginx-logrotation/">Nginx - ログローテーション設定！</a></div>
+<div class="line"><a class="reference external" href="https://www.mk-mode.com/blog/2013/02/17/nginx-logrotation/">Why does nginx starts process as root?</a></div>
+<div class="line"><a class="reference external" href="https://qiita.com/morrr/items/7c97f0d2e46f7a8ec967">nginxについてまとめ(設定編)</a></div>
+<div class="line"><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a></div>
+<div class="line"><a class="reference external" href="https://rin-ka.net/nginx01/">Nginx よく使う設定</a></div>
+<div class="line"><a class="reference external" href="https://rin-ka.net/nginx-proxy-cache/">【実践】Nginx のリバースプロキシでファイルをキャッシュする方法</a></div>
+<div class="line"><a class="reference external" href="https://oki2a24.com/2019/07/01/setting-to-use-both-80-and-443-port-in-nginx/">80 番ポートへのアクセスを 443 番ポートへのアクセスに強制する設定</a></div>
+</div>
+<p>))}’)’))””””””””””)]</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="apache">
+<h2>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="zabbix">
+<h2>Zabbix<a class="headerlink" href="#zabbix" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ready">
+<h3>Ready…<a class="headerlink" href="#ready" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="package">
+<h4>Package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">wget</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="firewall">
+<h4>Firewall<a class="headerlink" href="#firewall" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="nb">all</span> <span class="c1"># 確認</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=</span><span class="mi">10050</span><span class="o">/</span><span class="n">tcp</span> <span class="o">--</span><span class="n">permanent</span> <span class="c1"># ポートの追加</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=</span><span class="mi">10051</span><span class="o">/</span><span class="n">tcp</span> <span class="o">--</span><span class="n">permanent</span> <span class="c1"># ポートの追加</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">reload</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selinux">
+<h4>SELinux<a class="headerlink" href="#selinux" title="Permalink to this headline">¶</a></h4>
+<p>SELinuxでポートを変更している場合は下記の設定を行う</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">semanage port -a -t &lt;zabbix_port_t&gt; -p tcp &lt;10050&gt;</div>
+<div class="line">semanage port -a -t &lt;zabbix_agent_port_t&gt; -p tcp &lt;10051&gt;</div>
+<div class="line">semanage port –list | grep zabbix</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id36">
+<h3>構築手順<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://repo.zabbix.com/zabbix/">https://repo.zabbix.com/zabbix/</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">dnf</span> <span class="pre">clean</span> <span class="pre">all</span></code></p>
+<p>dnf –y install zabbix-server-mysql zabbix-web-mysql zabbix-agent zabbix-get zabbix-web-japanese</p>
+<p># MySQLのリポジトリ追加
+<a class="reference external" href="https://dev.mysql.com/downloads/">https://dev.mysql.com/downloads/</a></p>
+<p>systemctl enable –now mysqld</p>
+<p>cat /var/log/mysqld.log | grep pass</p>
+<p>mysql_secure_installation</p>
+<p>mysql -u root -p</p>
+<p>create database zabbix character set utf8 collate utf8_bin;
+create user <a class="reference external" href="mailto:zabbix&#37;&#52;&#48;localhost">zabbix<span>&#64;</span>localhost</a> identified by ‘&lt;password&gt;’;
+grant all privileges on zabbix.* to <a class="reference external" href="mailto:zabbix&#37;&#52;&#48;localhost">zabbix<span>&#64;</span>localhost</a>;
+quit;</p>
+<p>zcat /usr/share/doc/zabbix-server-mysql/server.sql.gz | mysql -uzabbix -p zabbix</p>
+<p>/etc/zabbix/zabbix_server.conf
+DBPassword=password</p>
+<p>systemctl enable zabbix-server zabbix-agent httpd php-fpm
+systemctl restart zabbix-server zabbix-agent httpd php-fpm</p>
+<div class="section" id="add-repository">
+<h4>Add Repository<a class="headerlink" href="#add-repository" title="Permalink to this headline">¶</a></h4>
+<p>Zabbixのリポジトリより最新版（zabbix-agent2-5.0.9-1.el7.x86_64.rpm）のAgent2をDownload</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">zabbix</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">zabbix</span><span class="o">/</span><span class="mf">5.0</span><span class="o">/</span><span class="n">rhel</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="n">x86_64</span><span class="o">/</span><span class="n">zabbix</span><span class="o">-</span><span class="n">agent2</span><span class="o">-</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">9</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span>
+<span class="n">yum</span> <span class="n">clean</span> <span class="nb">all</span> <span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install">
+<h4>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">zabbix</span><span class="o">-</span><span class="n">agent2</span><span class="o">-</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">9</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> <span class="c1"># インストール</span>
+<span class="n">rm</span> <span class="n">zabbix</span><span class="o">-</span><span class="n">agent2</span><span class="o">-</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">9</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> <span class="c1"># 掃除</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id37">
+<h4>設定ファイルの編集<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">zabbix</span><span class="o">/</span><span class="n">zabbix_agent2</span><span class="o">.</span><span class="n">conf</span> <span class="c1"># 設定ファイルの編集</span>
+
+<span class="c1"># /etc/zabbix/zabbix_agent2.conf ----------------------</span>
+
+  <span class="n">Server</span>         <span class="c1">#</span>
+  <span class="n">ServerActive</span>   <span class="c1">#</span>
+  <span class="n">Hostname</span>       <span class="c1">#Zabbixサーバに登録するホスト名</span>
+
+<span class="c1"># -----------------------------------------------------</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id38">
+<h4>自動起動の設定及び起動<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">enable</span> <span class="o">--</span><span class="n">now</span> <span class="n">zabbix</span><span class="o">-</span><span class="n">agent2</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-step">
+<h4>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h4>
+<p>GUI上にてZabbixホストを登録し疎通確認を行う</p>
+</div>
+</div>
+<div class="section" id="case">
+<h3>Case<a class="headerlink" href="#case" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="slack">
+<h4>Slackに通知する<a class="headerlink" href="#slack" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p># アラートを複数のチャンネル(slack)に分割する</p>
+</div></blockquote>
+</div>
+<div class="section" id="id39">
+<h4>複数のSlackに通知を送りたい<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://qiita.com/3244/items/027fa9752dfa67bdb8d3">https://qiita.com/3244/items/027fa9752dfa67bdb8d3</a></p>
+</div>
+</div>
+<div class="section" id="reference">
+<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="zabbix-5-0-slack">
+<h4>Zabbix 5.0 で Slack にアラートを連携する<a class="headerlink" href="#zabbix-5-0-slack" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://qiita.com/Higemal/items/f0bc18bf66e54628b22a">https://qiita.com/Higemal/items/f0bc18bf66e54628b22a</a></p>
+<p>ZabbixServer
+<a class="reference external" href="https://www.zabbix.com/download">https://www.zabbix.com/download</a></p>
+<p>Agent2インストール方法
+<a class="reference external" href="https://medium.com/geekculture/how-to-install-zabbix-agent2-on-linux-c603023207d2">https://medium.com/geekculture/how-to-install-zabbix-agent2-on-linux-c603023207d2</a></p>
+<p>Zabbix 5.4をCentOS 8にインストール(MySQL編)
+<a class="reference external" href="https://qiita.com/atanaka7/items/02be059fc8a20c7ca501">https://qiita.com/atanaka7/items/02be059fc8a20c7ca501</a>)</p>
+</div>
+</div>
+</div>
+<div class="section" id="corosync">
+<h2>Corosync<a class="headerlink" href="#corosync" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="samba">
+<h2>Samba<a class="headerlink" href="#samba" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="redmine">
+<h2>Redmine<a class="headerlink" href="#redmine" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="puppet">
+<h2>Puppet<a class="headerlink" href="#puppet" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="openvpn">
+<h2>OpenVPN<a class="headerlink" href="#openvpn" title="Permalink to this headline">¶</a></h2>
+<p>VPNの認証方式
+1.静的鍵(static key) # 1対1の設定しかできない
+2.証明書認証
+3.二要素認証</p>
+<p>OpenVPNで使用できる認証方法
+<a class="reference external" href="https://www.openvpn.jp/document/authentication-methods/">https://www.openvpn.jp/document/authentication-methods/</a></p>
+<p><a class="reference external" href="https://www.openvpn.jp/">OpenVPN.JP</a></p>
+<p>server.confを編集する</p>
+<p><a class="reference external" href="https://www.vpnux.jp/intro">vpnux Client</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Server側の設定に合わせること</p>
+</div>
+<p># Firewall
+&gt; firewall-cmd –add-port=1194/udp –permanent #UDP
+&gt; firewall-cmd –add-port=1194/tcp –permanent #TCP ; 要確認 Server側がtcpでlistenしていたので解放
+&gt; firewall-cmd –reload</p>
+<p># epel repositoryのインストール
+&gt; yum install -y epel-release</p>
+<p># 導入
+&gt; yum install -y –enablerepo=epel openvpn</p>
+<p># Openvpn serverのserver.confに追記
+push “route &lt;IP_ADDRESS&gt; 255.255.255.0”</p>
+<p>#
+-remote my-server-1 1194
++remote &lt;ServerIP&gt; 1194</p>
+<p># 実行</p>
+<p>&gt; cd /etc/openvpn/client/ &amp;&amp; openvpn client.conf</p>
+<ul class="simple">
+<li><p>Errorの為、調査</p></li>
+</ul>
+<p>verbオプションを変更する事でログのデバッグレベルを変更できる</p>
+<p><a class="reference external" href="https://www.web-dev-qa-db-ja.com/ja/log/openvpn%E6%8E%A5%E7%B6%9A%E3%83%AD%E3%82%B0%E3%81%A8%E8%A8%AD%E5%AE%9A%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AF%E3%81%A9%E3%81%93%E3%81%AB%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F/961552820/">OpenVPN接続ログと設定ファイルはどこにありますか？</a></p>
+<p><a class="reference external" href="https://serverfault.com/questions/673984/openvpn-dont-start-cert-fails-with-client-crt-no-such-file-or-directory">OpenVPN don’t start: –cert fails with ‘client.crt’: No such file or directory</a></p>
+<p># トンネルインターフェースを作ってみた
+&gt; nmcli c a type tun ifname tun0 con-name tun0</p>
+</div>
+<div class="section" id="openshift">
+<h2>Openshift<a class="headerlink" href="#openshift" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="logstash">
+<h2>Logstash<a class="headerlink" href="#logstash" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="tomcat">
+<h2>Tomcat<a class="headerlink" href="#tomcat" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id41">
+<h2>OpenAM<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="database.html" class="btn btn-neutral float-right" title="DATABASE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="go.html" class="btn btn-neutral float-left" title="GO LANG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, yoshi.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+##########
+TEXTEDITOR
+##########
+
+
+
+.. include:: ./texteditor/vim.rst
+.. include:: ./texteditor/emacs.rst
+.. include:: ./texteditor/vscode.rst
+.. include:: ./texteditor/sakura.rst

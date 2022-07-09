@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>NETWORK &mdash; Blue Field v1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="main" href="main.html" />
+    <link rel="prev" title="OS" href="os.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6785010150916443"
+       crossorigin="anonymous">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4CD4ZD75QT"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4CD4ZD75QT');
+  </script>
+  </script>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Blue Field
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="os.html">OS</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NETWORK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#networkinterface-nic">NetworkInterface (NIC)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nmcli">nmcli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tcpdump">tcpdump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#firewall-cmd">firewall-cmd</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Main:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selinux.html">SELinux</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="go.html">GO LANG</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mw.html">Middleware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Database:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="database/mysql.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/maria.html">MariaDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/mongo.html">Mongo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/oracle.html">OracleDatabase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database/cassandra.html">Cassandra</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cloud:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cloud/index.html">Cloud Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Virtualization:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/index.html">Virtualization Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/vagrant.html">VAGRANT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/virtualbox.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/kvm.html">KVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/xen.html">Xen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/hyper-v.html">Hyper-v</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/esxi.html">VMware ESXi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization/kubernetes.html">Kubernetes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="framework/django.html">Django</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitlab.html">Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tmux.html">tmux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logrotate.html">Logrotate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html">SHELL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html#z-shell">Z shell</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TextEditor:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="texteditor/vim.html">VIM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="texteditor/emacs.html">Emacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="texteditor/sakura.html">サクラエディタ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="texteditor/vscode.html">Visual Studio Code</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Blue Field</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>NETWORK</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/network.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="network">
+<h1>NETWORK<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="networkinterface-nic">
+<h2>NetworkInterface (NIC)<a class="headerlink" href="#networkinterface-nic" title="Permalink to this headline">¶</a></h2>
+<p># E1000E
+LinkSpeed:1000Mb/s = 1Gbps</p>
+<p># VMXEXT3
+VMware vSphereプラットフォームで実行されている仮想マシン（VM）で高性能を実現するように設計された仮想ネットワークアダプターです。
+LinkSpeed:10000Mb/s = 10Gbps</p>
+<div class="section" id="nmcli">
+<h3>nmcli<a class="headerlink" href="#nmcli" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmcli</span> <span class="n">con</span> <span class="n">m</span> <span class="n">ens192</span> <span class="n">ipv4</span><span class="o">.</span><span class="n">method</span> <span class="n">manual</span> <span class="n">ipv4</span><span class="o">.</span><span class="n">address</span> <span class="o">&lt;</span><span class="n">ip_address</span><span class="o">&gt;</span> <span class="c1"># IPv4の設定</span>
+<span class="n">nmcli</span> <span class="n">connection</span> <span class="n">add</span> <span class="nb">type</span> <span class="n">ethernet</span> <span class="n">ifname</span> <span class="o">&lt;</span><span class="n">ens224</span><span class="o">&gt;</span> <span class="n">con</span><span class="o">-</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">ens224</span><span class="o">&gt;</span> <span class="c1"># IFの登録</span>
+
+<span class="n">nmcli</span> <span class="n">c</span> <span class="n">m</span> <span class="o">&lt;</span><span class="n">IF</span><span class="o">&gt;</span> <span class="n">ipv4</span><span class="o">.</span><span class="n">method</span> <span class="n">manual</span>
+<span class="n">nmcli</span> <span class="n">con</span> <span class="n">m</span> <span class="n">ens192</span> <span class="n">ipv4</span><span class="o">.</span><span class="n">address</span> <span class="s2">&quot;&lt;IF/PREFIX&gt;&quot;</span>
+</pre></div>
+</div>
+<p># Static Route</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmcli</span> <span class="n">c</span> <span class="n">a</span> <span class="o">&lt;</span><span class="n">設定したいInterface</span><span class="o">&gt;</span> <span class="o">+</span><span class="n">ipv4</span><span class="o">.</span><span class="n">routes</span> <span class="s2">&quot;&lt;nw address/prefix&gt; &lt;gw address&gt;&quot;</span> <span class="c1"># 追加</span>
+<span class="n">nmcli</span> <span class="n">c</span> <span class="n">a</span> <span class="o">&lt;</span><span class="n">設定したいInterface</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">ipv4</span><span class="o">.</span><span class="n">routes</span> <span class="s2">&quot;&lt;nw address/prefix&gt; &lt;gw address&gt;&quot;</span> <span class="c1"># 削除</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmcli</span> <span class="n">c</span> <span class="n">m</span> <span class="n">ens192</span> <span class="n">connection</span><span class="o">.</span><span class="n">autoconnect</span> <span class="n">yes</span> <span class="c1"># 自動接続の有効化</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmcli</span> <span class="n">c</span> <span class="n">m</span> <span class="n">ens192</span> <span class="n">ipv4</span><span class="o">.</span><span class="n">gateway</span> <span class="s2">&quot;&lt;gw_address&gt;&quot;</span> <span class="c1"># GWの設定</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmcli</span> <span class="n">c</span> <span class="n">d</span> <span class="o">&lt;</span><span class="n">interface</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">nmcli</span> <span class="n">c</span> <span class="n">u</span> <span class="o">&lt;</span><span class="n">interface</span><span class="o">&gt;</span> <span class="c1"># IFの停止と起動</span>
+</pre></div>
+</div>
+<p>#ipv6無効化</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmcli</span> <span class="n">con</span> <span class="n">mod</span> <span class="o">&lt;</span><span class="n">ens192</span><span class="o">&gt;</span> <span class="n">ipv6</span><span class="o">.</span><span class="n">method</span> <span class="n">ignore</span>
+<span class="n">nmcli</span> <span class="n">con</span> <span class="n">mod</span> <span class="o">&lt;</span><span class="n">ens192</span><span class="o">&gt;</span> <span class="n">ipv4</span><span class="o">.</span><span class="n">may</span><span class="o">-</span><span class="n">fail</span> <span class="n">no</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tcpdump">
+<h3>tcpdump<a class="headerlink" href="#tcpdump" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tcpdump</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">eth1</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">icmp</span> <span class="c1"># &lt;eth1&gt;で受信するicmpパケットの確認</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="firewall-cmd">
+<h3>firewall-cmd<a class="headerlink" href="#firewall-cmd" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">source</span><span class="o">=&lt;</span><span class="n">IP_ADDRESS</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">permanent</span> <span class="c1"># Sourceを指定</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">service</span><span class="o">=&lt;</span><span class="n">serice</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">permanent</span>    <span class="c1"># Serviceを指定</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=&lt;</span><span class="n">port</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">permanent</span>         <span class="c1"># Portを指定</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">reload</span> <span class="c1"># 再読込</span>
+</pre></div>
+</div>
+<p>複数NICのルーティング(Linux)
+<a class="reference external" href="https://livescamp.com/learn/nic">https://livescamp.com/learn/nic</a></p>
+<p># よく使う
+# curl でtelnet確認
+curl -v <a class="reference external" href="telnet://example.com:443">telnet://example.com:443</a>)””””””””)</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="main.html" class="btn btn-neutral float-right" title="main" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="os.html" class="btn btn-neutral float-left" title="OS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, yoshi.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

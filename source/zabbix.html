@@ -121,7 +121,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Network:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="network/network.html">NetworkInterface (NIC)  +</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network/network.html">NetworkInterface (NIC)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
@@ -348,6 +348,24 @@
 </div>
 <div class="section" id="id1">
 <h2>構築手順<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://repo.zabbix.com/zabbix/">https://repo.zabbix.com/zabbix/</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">dnf</span> <span class="pre">clean</span> <span class="pre">all</span></code></p>
+<p>dnf –y install zabbix-server-mysql zabbix-web-mysql zabbix-agent zabbix-get zabbix-web-japanese</p>
+<p># MySQLのリポジトリ追加
+<a class="reference external" href="https://dev.mysql.com/downloads/">https://dev.mysql.com/downloads/</a></p>
+<p>systemctl enable –now mysqld</p>
+<p>cat /var/log/mysqld.log | grep pass</p>
+<p>mysql_secure_installation</p>
+<p>mysql -u root -p</p>
+<p>create database zabbix character set utf8 collate utf8_bin;
+create user <a class="reference external" href="mailto:zabbix&#37;&#52;&#48;localhost">zabbix<span>&#64;</span>localhost</a> identified by ‘&lt;password&gt;’;
+grant all privileges on zabbix.* to <a class="reference external" href="mailto:zabbix&#37;&#52;&#48;localhost">zabbix<span>&#64;</span>localhost</a>;
+quit;</p>
+<p>zcat /usr/share/doc/zabbix-server-mysql/server.sql.gz | mysql -uzabbix -p zabbix</p>
+<p>/etc/zabbix/zabbix_server.conf
+DBPassword=password</p>
+<p>systemctl enable zabbix-server zabbix-agent httpd php-fpm
+systemctl restart zabbix-server zabbix-agent httpd php-fpm</p>
 <div class="section" id="add-repository">
 <h3>Add Repository<a class="headerlink" href="#add-repository" title="Permalink to this headline">¶</a></h3>
 <p>Zabbixのリポジトリより最新版（zabbix-agent2-5.0.9-1.el7.x86_64.rpm）のAgent2をDownload</p>
@@ -406,6 +424,12 @@
 <div class="section" id="zabbix-5-0-slack">
 <h3>Zabbix 5.0 で Slack にアラートを連携する<a class="headerlink" href="#zabbix-5-0-slack" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://qiita.com/Higemal/items/f0bc18bf66e54628b22a">https://qiita.com/Higemal/items/f0bc18bf66e54628b22a</a></p>
+<p>ZabbixServer
+<a class="reference external" href="https://www.zabbix.com/download">https://www.zabbix.com/download</a></p>
+<p>Agent2インストール方法
+<a class="reference external" href="https://medium.com/geekculture/how-to-install-zabbix-agent2-on-linux-c603023207d2">https://medium.com/geekculture/how-to-install-zabbix-agent2-on-linux-c603023207d2</a></p>
+<p>Zabbix 5.4をCentOS 8にインストール(MySQL編)
+<a class="reference external" href="https://qiita.com/atanaka7/items/02be059fc8a20c7ca501">https://qiita.com/atanaka7/items/02be059fc8a20c7ca501</a>)</p>
 </div>
 </div>
 </div>

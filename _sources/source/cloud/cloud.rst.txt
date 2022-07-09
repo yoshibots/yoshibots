@@ -1,0 +1,9 @@
+#####
+Cloud
+#####
+
+
+.. literalinclude:: aws.rst
+   
+.. include:: gcp
+.. include:: azure

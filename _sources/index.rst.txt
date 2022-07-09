@@ -8,28 +8,16 @@ Welcome to Blue Field
 
 .. toctree::
    :maxdepth: 2
-   :caption: System:
-
-   /source/system/unix
 
 .. toctree::
    :maxdepth: 2
-   :caption: OS:
 
-   /source/os/ubuntu
-   /source/os/centos
-   /source/os/archlinux
-   /source/os/kalilinux
-   /source/os/redhat
-   /source/os/suselinux
-   /source/os/solaris
-   /source/os/windows
+   /source/os
 
 .. toctree::
    :maxdepth: 2
-   :caption: Network:
 
-   /source/network/network
+   /source/network
    
 .. toctree::
    :maxdepth: 2
@@ -48,66 +36,20 @@ Welcome to Blue Field
 
 .. toctree::
    :maxdepth: 2
-   :caption: MW:
    
-   /source/link
-   /source/squid
-   /source/apache
-   /source/nginx
-   /source/litespeed
-   /source/tomcat
-   /source/splunk
-   /source/zabbix
-   /source/nagios
-   /source/redmine
-   /source/bind
-   /source/samba
-   /source/bacula
-   /source/snort
-   /source/mail/postfix
-   /source/mail/sendmail
-   /source/keepalive
-   /source/pacemaker
-   /source/corosync
-   /source/drdb
-   /source/haproxy
-   /source/openvpn
-   /source/openam
-   /source/keycloak
-   /source/elasticsearch
-   /source/kibana
-   /source/openldap
-   /source/kafka
-   /source/logstash
-   /source/fluentd 
-   /source/apache_hadoop
-   /source/apache_spark
-   /source/openshift
-   /source/sphinx
-   /source/ansible
-   /source/puppet
+   /source/mw
 
 .. toctree::
    :maxdepth: 2
-   :caption: Database:
    
-   /source/database/mysql
-   /source/database/maria
-   /source/database/mongo
-   /source/database/postgresql
-   /source/database/oracle
-   /source/database/cassandra
+   /source/database
 
 .. toctree::
    :maxdepth: 2
    :caption: Cloud:
 
    /source/cloud/index
-   /source/cloud/aspire
-   /source/cloud/aws
-   /source/cloud/gcp
-   /source/cloud/azure
-   
+
 .. toctree::
    :maxdepth: 2
    :caption: Virtualization:
@@ -141,12 +83,8 @@ Welcome to Blue Field
 
 .. toctree::
    :maxdepth: 2
-   :caption: TextEditor:
 
-   /source/texteditor/vim
-   /source/texteditor/emacs
-   /source/texteditor/sakura
-   /source/texteditor/vscode
+   /source/texteditor
 
 Indices and tables
 ==================
