@@ -8,4 +8,5 @@ OTHER
 .. include:: ./other/git.rst
 .. include:: ./other/shell.rst
 .. include:: ./other/setup.rst
-.. include:: ./other/tmux.rst
+.. include:: ./other/logrotate.rst
+.. include:: ./other/gitlab.rst

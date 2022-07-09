@@ -42,7 +42,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="main" href="main.html" />
+    <link rel="prev" title="TEXTEDITOR" href="texteditor.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -129,6 +131,32 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="texteditor.html">TEXTEDITOR</a></li>
 </ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OTHER</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tmux">tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell">SHELL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Shellの種類</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#z-shell">Z shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logrotate">Logrotate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gitlab">Gitlab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">GitLab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
@@ -214,15 +242,14 @@
 </div>
 <p>tmuxで複数のペインに対して一斉に同じ文字を入力する
 <a class="reference external" href="https://matsuu.hatenablog.com/entry/20111207/1323270131">https://matsuu.hatenablog.com/entry/20111207/1323270131</a></p>
+</div>
 <div class="section" id="git">
-<h3>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="shell">
-<h3>SHELL<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
+<h2>SHELL<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h2>Shellの種類<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3>Shellの種類<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt>sh<span class="classifier">Bourne shell</span></dt><dd><p>ベル研究所のStephen R. Bourneが開発したシェル。B shellとも。</p>
@@ -256,12 +283,12 @@
 </li>
 <li></li>
 </ul>
+</div>
+</div>
 <div class="section" id="z-shell">
-<h3>Z shell<a class="headerlink" href="#z-shell" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
+<h2>Z shell<a class="headerlink" href="#z-shell" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="install">
-<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">zsh</span>
 </pre></div>
 </div>
@@ -282,25 +309,70 @@
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="setup">
 <h2>setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p><a href="#id2"><span class="problematic" id="id3">*</span></a>Fontのインストール
 Cica</p>
 <p>参考
 <a class="reference external" href="https://kzmmtmt.pgw.jp/?p=1961">https://kzmmtmt.pgw.jp/?p=1961</a></p>
+<div class="section" id="logrotate">
+<h3>Logrotate<a class="headerlink" href="#logrotate" title="Permalink to this headline">¶</a></h3>
+<p>&#64; man logrotate</p>
+<p># 使い方
+/etc/logrotate.d/配下に設定ファイル(任意の名前)を作成するだけ。</p>
+<p># 原理
+logrotateは、ローテーションの状態を保持しておくlogrotate.stateに基づいて実行される。</p>
+<p># その他
+設定ファイル内のコメントは</p>
+<ul class="simple">
+<li><p>/etc/logrotate.conf # Default設定</p></li>
+<li><p>/etc/logrotate.d/# 配下に個別の設定を書く</p></li>
+</ul>
+<dl class="simple">
+<dt># 最後にローテーションした日時を管理するファイル（OSやバージョンによりパスが違う）</dt><dd><p># /var/lib/logrotate/logrotate.status</p>
+</dd>
+</dl>
+<p># OPTIONS</p>
+<p>&#64; man logratate を実行して確認するのが正確。</p>
+<p># EXAMPLE</p>
+<p># Debug (-d)
+&gt; logrotate -d /etc/logrotate.d/&lt;FILENAME&gt;</p>
+<p># 強制実行 (-f)
+&gt; logrotate -f /etc/logrotate.d/&lt;FILENAME&gt; # 実行記録が/var/lib/logrotate/logrotate.statusに残る</p>
+<p># RELATION +</p>
+<p># journald
+RateLimitInterval=30s
+RateLimitBurst=1000</p>
+<p># Ref</p>
+<p><a class="reference external" href="http://var.blog.jp/archives/83318058.html">logrotate の 1 日目は rotate されない</a></p>
+<blockquote>
+<div><p>【日本語man】logrotateの全オプション解説
+<a class="reference external" href="https://hackers-high.com/linux/man-jp-logrotate/#copytruncate">https://hackers-high.com/linux/man-jp-logrotate/#copytruncate</a></p>
+<p>末尾以外の場所に日付を挿入する
+<a class="reference external" href="https://qiita.com/tbpgr/items/a8499496fca6f5aa958b">https://qiita.com/tbpgr/items/a8499496fca6f5aa958b</a></p>
+<p>logrotate の設定をサンプルから勉強します♪【実践的】
+<a class="reference external" href="https://oki2a24.com/2013/03/11/study-logrotate-config/">https://oki2a24.com/2013/03/11/study-logrotate-config/</a></p>
+<p>任意のログファイルのログローテションについて
+<a class="reference external" href="https://skill-up-engineering.com/2017/02/23/post-2400/">https://skill-up-engineering.com/2017/02/23/post-2400/</a></p>
+<p>logrotateでログのローテーションをする(copytruncateについて)
+<a class="reference external" href="https://blog.willnet.in/entry/20081001/1222836601">https://blog.willnet.in/entry/20081001/1222836601</a></p>
+<p>【Rails】Railsアプリのログローテーション設定を行う
+<a class="reference external" href="https://www.autovice.jp/articles/115">https://www.autovice.jp/articles/115</a></p>
+<p>ログローテートソフトウエア logrotate についてまとめ
+<a class="reference external" href="https://qiita.com/shotets/items/e13e1d1739eaea7b1ff9">https://qiita.com/shotets/items/e13e1d1739eaea7b1ff9</a>
+))))</p>
+</div></blockquote>
 </div>
-<div class="section" id="id4">
-<h2>tmux<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p># 複数のペインで同じコマンドを入力させる(Tmuxのバーで)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span> <span class="nb">set</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="n">option</span> <span class="n">synchronize</span><span class="o">-</span><span class="n">panes</span> <span class="n">on</span>  <span class="c1"># 同期をONにする</span>
-<span class="p">:</span> <span class="nb">set</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="n">option</span> <span class="n">synchronize</span><span class="o">-</span><span class="n">panes</span> <span class="n">off</span> <span class="c1"># 同期をOFFにする</span>
-</pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Prefix</span> <span class="n">key</span><span class="p">]</span> <span class="o">+</span> <span class="o">.</span><span class="p">])</span> <span class="c1"># windowの番号を変更する</span>
-</pre></div>
+<div class="section" id="gitlab">
+<h2>Gitlab<a class="headerlink" href="#gitlab" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reference">
+<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4><a class="reference external" href="https://about.gitlab.com/">GitLab</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 </div>
-<p>tmuxで複数のペインに対して一斉に同じ文字を入力する
-<a class="reference external" href="https://matsuu.hatenablog.com/entry/20111207/1323270131">https://matsuu.hatenablog.com/entry/20111207/1323270131</a></p>
+</div>
 </div>
 </div>
 
@@ -309,6 +381,10 @@ Cica</p>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="main.html" class="btn btn-neutral float-right" title="main" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="texteditor.html" class="btn btn-neutral float-left" title="TEXTEDITOR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
