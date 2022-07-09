@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>VAGRANT &mdash; Blue Field v1.0 documentation</title>
+  <title>Logrotate &mdash; Blue Field v1.0 documentation</title>
   
 
   
@@ -129,9 +129,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../texteditor.html">TEXTEDITOR</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../other.html">OTHER</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../main.html">main</a></li>
@@ -184,13 +181,13 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>VAGRANT</li>
+      <li>Logrotate</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/source/virtualization/vagrant.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/source/other/logrotate.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -203,8 +200,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vagrant">
-<h1>VAGRANT<a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="logrotate">
+<h1>Logrotate<a class="headerlink" href="#logrotate" title="Permalink to this headline">¶</a></h1>
+<p>&#64; man logrotate</p>
+<p># 使い方
+/etc/logrotate.d/配下に設定ファイル(任意の名前)を作成するだけ。</p>
+<p># 原理
+logrotateは、ローテーションの状態を保持しておくlogrotate.stateに基づいて実行される。</p>
+<p># その他
+設定ファイル内のコメントは</p>
+<ul class="simple">
+<li><p>/etc/logrotate.conf # Default設定</p></li>
+<li><p>/etc/logrotate.d/# 配下に個別の設定を書く</p></li>
+</ul>
+<dl class="simple">
+<dt># 最後にローテーションした日時を管理するファイル（OSやバージョンによりパスが違う）</dt><dd><p># /var/lib/logrotate/logrotate.status</p>
+</dd>
+</dl>
+<p># OPTIONS</p>
+<p>&#64; man logratate を実行して確認するのが正確。</p>
+<p># EXAMPLE</p>
+<p># Debug (-d)
+&gt; logrotate -d /etc/logrotate.d/&lt;FILENAME&gt;</p>
+<p># 強制実行 (-f)
+&gt; logrotate -f /etc/logrotate.d/&lt;FILENAME&gt; # 実行記録が/var/lib/logrotate/logrotate.statusに残る</p>
+<p># RELATION +</p>
+<p># journald
+RateLimitInterval=30s
+RateLimitBurst=1000</p>
+<p># Ref</p>
+<p><a class="reference external" href="http://var.blog.jp/archives/83318058.html">logrotate の 1 日目は rotate されない</a></p>
+<blockquote>
+<div><p>【日本語man】logrotateの全オプション解説
+<a class="reference external" href="https://hackers-high.com/linux/man-jp-logrotate/#copytruncate">https://hackers-high.com/linux/man-jp-logrotate/#copytruncate</a></p>
+<p>末尾以外の場所に日付を挿入する
+<a class="reference external" href="https://qiita.com/tbpgr/items/a8499496fca6f5aa958b">https://qiita.com/tbpgr/items/a8499496fca6f5aa958b</a></p>
+<p>logrotate の設定をサンプルから勉強します♪【実践的】
+<a class="reference external" href="https://oki2a24.com/2013/03/11/study-logrotate-config/">https://oki2a24.com/2013/03/11/study-logrotate-config/</a></p>
+<p>任意のログファイルのログローテションについて
+<a class="reference external" href="https://skill-up-engineering.com/2017/02/23/post-2400/">https://skill-up-engineering.com/2017/02/23/post-2400/</a></p>
+<p>logrotateでログのローテーションをする(copytruncateについて)
+<a class="reference external" href="https://blog.willnet.in/entry/20081001/1222836601">https://blog.willnet.in/entry/20081001/1222836601</a></p>
+<p>【Rails】Railsアプリのログローテーション設定を行う
+<a class="reference external" href="https://www.autovice.jp/articles/115">https://www.autovice.jp/articles/115</a></p>
+<p>ログローテートソフトウエア logrotate についてまとめ
+<a class="reference external" href="https://qiita.com/shotets/items/e13e1d1739eaea7b1ff9">https://qiita.com/shotets/items/e13e1d1739eaea7b1ff9</a>
+))))</p>
+</div></blockquote>
 </div>
 
 

@@ -1,0 +1,14 @@
+##############
+VIRTUALIZATION
+##############
+
+
+
+.. include:: ./virtualization/docker.rst
+.. include:: ./virtualization/xen.rst
+.. include:: ./virtualization/kvm.rst
+.. include:: ./virtualization/vagrant.rst
+.. include:: ./virtualization/kubernetes.rst
+.. include:: ./virtualization/virtualbox.rst
+.. include:: ./virtualization/hyper-v.rst
+.. include:: ./virtualization/esxi.rst

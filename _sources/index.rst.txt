@@ -18,26 +18,16 @@ Welcome to Blue Field
    :maxdepth: 2
 
    /source/network
-   
-.. toctree::
-   :maxdepth: 2
-   :caption: Main:
-   
-   /source/main
-   /source/selinux
 
 .. toctree::
    :maxdepth: 2
-   :caption: Development:
 
-   /source/python
-   /source/c
-   /source/go
+   /source/development
 
 .. toctree::
    :maxdepth: 2
    
-   /source/mw
+   /source/middleware
 
 .. toctree::
    :maxdepth: 2
@@ -46,45 +36,35 @@ Welcome to Blue Field
 
 .. toctree::
    :maxdepth: 2
-   :caption: Cloud:
 
-   /source/cloud/index
+   /source/cloud
 
 .. toctree::
    :maxdepth: 2
-   :caption: Virtualization:
    
-   /source/virtualization/index
-   /source/virtualization/vagrant
-   /source/virtualization/virtualbox
-   /source/virtualization/kvm
-   /source/virtualization/xen
-   /source/virtualization/hyper-v
-   /source/virtualization/esxi
-   /source/virtualization/docker
-   /source/virtualization/kubernetes
+   /source/virtualization
 
 .. toctree::
    :maxdepth: 2
-   :caption: Framework:
 
-   /source/framework/django
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Other:
-
-   /source/git
-   /source/gitlab
-   /source/tmux
-   /source/logrotate
-   /source/setup
-   /source/shell
+   /source/framework
 
 .. toctree::
    :maxdepth: 2
 
    /source/texteditor
+
+.. toctree::
+   :maxdepth: 2
+
+   /source/other
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Main:
+   
+   /source/main
+   /source/selinux
 
 Indices and tables
 ==================

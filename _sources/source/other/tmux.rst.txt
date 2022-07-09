@@ -1,0 +1,20 @@
+tmux
+====
+
+
+# 複数のペインで同じコマンドを入力させる(Tmuxのバーで)
+
+.. code-block::
+
+   : set-window-option synchronize-panes on  # 同期をONにする
+   : set-window-option synchronize-panes off # 同期をOFFにする
+
+.. code-block::
+
+    [Prefix key] + .]) # windowの番号を変更する
+
+
+
+tmuxで複数のペインに対して一斉に同じ文字を入力する
+https://matsuu.hatenablog.com/entry/20111207/1323270131
+

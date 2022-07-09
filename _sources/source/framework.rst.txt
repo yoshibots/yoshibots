@@ -1,0 +1,6 @@
+#########
+FRAMEWORK
+#########
+
+
+.. include:: ./framework/django.rst

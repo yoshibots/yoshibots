@@ -1,0 +1,15 @@
+=====
+Squid
+=====
+
+
+Install Pacage
+--------------
+squid
+httpd-tools
+lsof
+
+
+
+`Proxyサーバの環境構築手順`_
+.. _`Proxyサーバの環境構築手順`: https://qiita.com/hana_shin/items/0f574358d040b4c60889

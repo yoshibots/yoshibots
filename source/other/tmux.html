@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>VAGRANT &mdash; Blue Field v1.0 documentation</title>
+  <title>tmux &mdash; Blue Field v1.0 documentation</title>
   
 
   
@@ -129,9 +129,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../texteditor.html">TEXTEDITOR</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../other.html">OTHER</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../main.html">main</a></li>
@@ -184,13 +181,13 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>VAGRANT</li>
+      <li>tmux</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/source/virtualization/vagrant.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/source/other/tmux.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -203,8 +200,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vagrant">
-<h1>VAGRANT<a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="tmux">
+<h1>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h1>
+<p># 複数のペインで同じコマンドを入力させる(Tmuxのバーで)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span> <span class="nb">set</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="n">option</span> <span class="n">synchronize</span><span class="o">-</span><span class="n">panes</span> <span class="n">on</span>  <span class="c1"># 同期をONにする</span>
+<span class="p">:</span> <span class="nb">set</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="n">option</span> <span class="n">synchronize</span><span class="o">-</span><span class="n">panes</span> <span class="n">off</span> <span class="c1"># 同期をOFFにする</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Prefix</span> <span class="n">key</span><span class="p">]</span> <span class="o">+</span> <span class="o">.</span><span class="p">])</span> <span class="c1"># windowの番号を変更する</span>
+</pre></div>
+</div>
+<p>tmuxで複数のペインに対して一斉に同じ文字を入力する
+<a class="reference external" href="https://matsuu.hatenablog.com/entry/20111207/1323270131">https://matsuu.hatenablog.com/entry/20111207/1323270131</a></p>
 </div>
 
 

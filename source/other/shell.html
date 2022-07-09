@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>VAGRANT &mdash; Blue Field v1.0 documentation</title>
+  <title>SHELL &mdash; Blue Field v1.0 documentation</title>
   
 
   
@@ -129,9 +129,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../texteditor.html">TEXTEDITOR</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../other.html">OTHER</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../main.html">main</a></li>
@@ -184,13 +181,13 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>VAGRANT</li>
+      <li>SHELL</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/source/virtualization/vagrant.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/source/other/shell.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -203,8 +200,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vagrant">
-<h1>VAGRANT<a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="shell">
+<h1>SHELL<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Shellの種類<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>sh<span class="classifier">Bourne shell</span></dt><dd><p>ベル研究所のStephen R. Bourneが開発したシェル。B shellとも。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>csh<span class="classifier">C shell</span></dt><dd><p>カリフォルニア大学バークレイ校のBill Joyが開発したシェル。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ksh<span class="classifier">korn shell</span></dt><dd><p>ベル研究所のDavid Kornが開発したシェル。Bourne shellとC shellの長所を程よく取り入れていた。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>bash<span class="classifier">Bourne Again SHell</span></dt><dd><p>Free Software Foundationが開発したシェル。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>tcsh :</dt><dd><p>C shellを改良したシェル。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>zsh  :</dt><dd><p>Paul Falstadがプリンストン大学の学生であった時に開発したシェル。</p>
+</dd>
+</dl>
+</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div class="section" id="z-shell">
+<h1>Z shell<a class="headerlink" href="#z-shell" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">zsh</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">shells</span> <span class="c1"># Show Current Shell</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chsh</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">zsh</span> <span class="c1"># Change Current Shell</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">.</span><span class="n">zshrc</span>
+
+<span class="c1"># .zshrc ---------------------------------</span>
+
+<span class="n">autoload</span> <span class="o">-</span><span class="n">U</span> <span class="n">compinit</span>
+<span class="n">compinit</span>
+
+<span class="c1"># .zshrc ---------------------------------</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
