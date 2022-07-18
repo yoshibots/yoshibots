@@ -10,3 +10,9 @@ OTHER
 .. include:: ./other/setup.rst
 .. include:: ./other/logrotate.rst
 .. include:: ./other/gitlab.rst
+.. include:: ./other/github.rst
+.. include:: ./other/kernel.rst
+.. include:: ./other/selinux.rst
+.. include:: ./other/unix.rst
+.. include:: ./other/sshd.rst
+.. include:: ./other/autossh.rst

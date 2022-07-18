@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>SELinux &mdash; Blue Field v1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6785010150916443"
+       crossorigin="anonymous">
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4CD4ZD75QT"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4CD4ZD75QT');
+  </script>
+  </script>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Blue Field
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../main.html">MAIN</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../os.html">OS</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../network.html">NETWORK</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">DEVELOPMENT</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../middleware.html">MIDDLEWARE</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database.html">DATABASE</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cloud.html">CLOUD</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../virtualization.html">VIRTUALIZATION</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../framework.html">FRAMEWORK</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../texteditor.html">TEXTEDITOR</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">OTHER</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../link.html">Link</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blue Field</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SELinux</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/source/other/selinux.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="selinux">
+<h1>SELinux<a class="headerlink" href="#selinux" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="package">
+<h2>Package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="semange-command">
+<h3>semange command<a class="headerlink" href="#semange-command" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dnf</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">policycoreutils</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">utils</span> <span class="c1"># CentOS8,RHEL9,</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">policycoreutils</span><span class="o">-</span><span class="n">python</span>       <span class="c1"># CentOS7,</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>基本形<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">--</span><span class="nb">list</span> <span class="c1">#</span>
+<span class="n">semanage</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">LABELTYPE</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1">#</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>無効状態から直接有効にするとラベルが適切でないものがある場合起動しなくなってしまう場合がある。その為、下記の手順を実施して一度Permissiveで起動後に有効化する。</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ルートディレクトリに.autorelabel を作成する</span>
+<span class="n">root</span><span class="o">&gt;</span> <span class="n">touch</span> <span class="o">.</span><span class="n">autorelabel</span>
+
+<span class="c1"># Permissiveに変更して起動させる</span>
+</pre></div>
+</div>
+<p># Enforcingで起動
+&gt; vi /etc/selinux/config ——————————</p>
+<p># 参照権限の付与
+&gt; semanage fcontext -a -t httpd_sys_content_t “&lt;XXX&gt;”</p>
+<p>&gt; setsebool -P httpd_can_network_connect_db 1 # 要確認 -&gt; webserver経由でDBアクセスできる設定
+&gt; setsebool -P httpd_can_network_connect=on</p>
+<p>## よく使うコマンド————————————</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">ssh_port_t</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1"># Ex.ssh_port_t  # portの追加</span>
+<span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">TYPE_LABEL</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1"># portの削除</span>
+<span class="n">semanage</span> <span class="n">fcontext</span> <span class="o">-</span><span class="n">l</span>  <span class="c1"># コンテキスト定義ルールの一覧表示</span>
+<span class="n">semanage</span> <span class="n">fcontext</span> <span class="o">--</span><span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">httpd_config_t</span>  <span class="c1"># 絞り込み</span>
+
+<span class="n">seinfo</span> <span class="o">-</span><span class="n">t</span>  <span class="c1"># SELinux のタイプ(type)一覧表示</span>
+<span class="n">seinfo</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">c</span>  <span class="c1"># SELinuxのClassとPermission一覧表示</span>
+
+<span class="n">semanage</span> <span class="n">fcontext</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">e</span> <span class="o">&lt;/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">var</span><span class="o">/</span><span class="n">test_www</span><span class="o">&gt;</span>  <span class="c1"># 定義したRuleの削除</span>
+
+<span class="n">getsebool</span> <span class="o">-</span><span class="n">a</span>  <span class="c1"># grep で絞り込む getsebool -a | grep http  # 組み込みルールのステータスを確認</span>
+
+<span class="c1"># 設定状態の確認(SELinux の個別追加設定した内容を表示(ただしsemodule等で追加したモジュール情報は見れない))</span>
+ <span class="n">semanage</span> <span class="n">export</span>
+
+ <span class="n">sesearch</span> <span class="o">-</span><span class="n">A</span> <span class="o">-</span><span class="n">s</span> <span class="n">httpd_t</span> <span class="o">-</span><span class="n">b</span> <span class="n">httpd_can_network_connect_db</span> <span class="o">-</span><span class="n">p</span> <span class="n">name_connect</span>  <span class="c1"># AVCの確認</span>
+</pre></div>
+</div>
+<p># 上記で許可されているPortの確認
+&gt; seinfo –protocol=tcp –port | grep -E ‘mongod_port_t|gds_db_port_t|mssql_port_t|oracle_port_t|postgresql_port_t|mysqld_port_t’</p>
+<p>## —————————————————-</p>
+<p># Nginxのドキュメントルートを変更した時のSELinuxの設定
+SELinuxでApacheで/var/wwwから変更した先のパスも許可する
+<a class="reference external" href="https://tex2e.github.io/blog/linux/selinux-httpd-change-documentroot">https://tex2e.github.io/blog/linux/selinux-httpd-change-documentroot</a></p>
+<p>&gt; ls -dZ &lt;/var/www&gt;
+&gt; semanage fcontext -a -e &lt;/var/www&gt; &lt;/var/test_www&gt;   # /var/www=参照するLabelのdir /var/test_www=対象とするdir</p>
+<blockquote>
+<div><p>semanage fcontext -l  # Policyの確認
+restorecon -R -v &lt;/var/test_www&gt;  # restoreconコマンドで反映させる</p>
+</div></blockquote>
+<p># chcon
+chcon -u &lt;XX&gt; &lt;FILENAME&gt;
+chcon system_u:object_r:mongod_var_lib_t:s0 &lt;FILENAME&gt;</p>
+<p># SELinux関連のトラブルシュート
+* Resolving SELinux Security Exceptions
+<a class="reference external" href="https://www.nginx.com/blog/using-nginx-plus-with-selinux/">https://www.nginx.com/blog/using-nginx-plus-with-selinux/</a></p>
+<blockquote>
+<div><p>&gt; cat /var/log/audit/audit.log | grep denied</p>
+<p># 番号でGrep
+&gt;grep &lt;1415714880.156:29&gt; /var/log/audit/audit.log | audit2why</p>
+</div></blockquote>
+<div class="section" id="ref">
+<h3>Ref<a class="headerlink" href="#ref" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.tohoho-web.com/ex/selinux.html">とほほのSELinux入門</a></p>
+<p><a class="reference external" href="https://milestone-of-se.nesuke.com/sv-advanced/selinux/config-list-add-del/">SELinux のコンテキスト定義ルール一覧表示</a></p>
+<p><a class="reference external" href="https://dev.classmethod.jp/articles/redhat-selinx-might-block-network-connection-to-servers-from-apache-php/">RedHatでPHPからDBサーバに接続できないときはSELinuxの設定が原因かも?</a></p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ssh">
+<h3>sshの…<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">--</span><span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">ssh</span>  <span class="c1"># sshのLabel確認</span>
+<span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="n">ssh_port_t</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="mi">20000</span> <span class="c1"># 20000ポートにssh_port_tのラベルを設定</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="http">
+<h3>http<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">--</span><span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">http</span>  <span class="c1"># httpのLabel確認</span>
+<span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="n">http_port_t</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="mi">20000</span> <span class="c1"># 20000ポートにhttp_port_tのラベルを設定</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, yoshi.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

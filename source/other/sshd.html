@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>VAGRANT &mdash; Blue Field v1.0 documentation</title>
+  <title>sshd &mdash; Blue Field v1.0 documentation</title>
   
 
   
@@ -188,13 +188,13 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>VAGRANT</li>
+      <li>sshd</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/source/virtualization/vagrant.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/source/other/sshd.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -207,8 +207,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vagrant">
-<h1>VAGRANT<a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="sshd">
+<h1>sshd<a class="headerlink" href="#sshd" title="Permalink to this headline">¶</a></h1>
+<p>SSHProxycommand
+MaxStartup</p>
+<blockquote>
+<div><p>Ex.MaxStartups 2:80:5
+上記の設定例では、「2」つまでの接続要求を受け付け、3つを超えるそれ以降の要求を「80」％の割合で拒否し、さらに要求が増え続けて「5」つを超えると以降すべてを拒否するという意味だ。</p>
+</div></blockquote>
+<p>-o IdentitiesOnly=yes</p>
 </div>
 
 

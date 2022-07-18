@@ -36,7 +36,7 @@ SELinuxでポートを変更している場合は下記の設定を行う
 
 構築手順
 =========
-
+https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/
 https://repo.zabbix.com/zabbix/
 
 ``dnf clean all``

@@ -38,6 +38,7 @@ Virtualization Index
 * CPU Flags(フラグ)
   CPUがサポートしている機能を示すフラグ（目印）のことであり、Linuxシステムでは/proc/cpuinfoファイルに情報が格納されている。
   CPUの仮想化支援機能が利用できる場合は/proc/cpuinfoファイルのflags行に「vmx」(Intelの場合)もしくは「svm」(AMDの場合)という文字列が記述されます。
+
 .. warning::
     CPUフラグはあくまでもCPUがその機能をサポートしているかどうかを表すだけのものであり、BIOSレベルでその機能が有効化されていることを保証するものではありません。
 

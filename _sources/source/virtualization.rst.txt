@@ -4,6 +4,7 @@ VIRTUALIZATION
 
 
 
+.. include:: ./virtualization/index.rst
 .. include:: ./virtualization/docker.rst
 .. include:: ./virtualization/xen.rst
 .. include:: ./virtualization/kvm.rst

@@ -105,6 +105,9 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">MAIN</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="os.html">OS</a></li>
 </ul>
 <ul class="current">
@@ -142,10 +145,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="other.html">OTHER</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
-<li class="toctree-l1"><a class="reference internal" href="selinux.html">SELinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link.html">Link</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
 </ul>
 
             
@@ -250,6 +254,12 @@ LinkSpeed:10000Mb/s = 10Gbps</p>
 <span class="n">nmcli</span> <span class="n">con</span> <span class="n">mod</span> <span class="o">&lt;</span><span class="n">ens192</span><span class="o">&gt;</span> <span class="n">ipv4</span><span class="o">.</span><span class="n">may</span><span class="o">-</span><span class="n">fail</span> <span class="n">no</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>プロファイルが残ってしまった時
+/etc/sysconfig/network-scripts/ifcfg-xxxを削除
+systemctl restart NetworkManager</p>
+</div>
 </div>
 <div class="section" id="tcpdump">
 <h3>tcpdump<a class="headerlink" href="#tcpdump" title="Permalink to this headline">¶</a></h3>
@@ -259,6 +269,7 @@ LinkSpeed:10000Mb/s = 10Gbps</p>
 </div>
 <div class="section" id="firewall-cmd">
 <h3>firewall-cmd<a class="headerlink" href="#firewall-cmd" title="Permalink to this headline">¶</a></h3>
+<p>本体(Ruleファイル)の場所：/usr/lib/firewalld/</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">source</span><span class="o">=&lt;</span><span class="n">IP_ADDRESS</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">permanent</span> <span class="c1"># Sourceを指定</span>
 <span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">service</span><span class="o">=&lt;</span><span class="n">serice</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">permanent</span>    <span class="c1"># Serviceを指定</span>
 <span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=&lt;</span><span class="n">port</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">permanent</span>         <span class="c1"># Portを指定</span>

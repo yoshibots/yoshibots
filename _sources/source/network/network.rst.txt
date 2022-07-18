@@ -47,6 +47,12 @@ nmcli
   nmcli con mod <ens192> ipv6.method ignore
   nmcli con mod <ens192> ipv4.may-fail no
 
+.. note::
+
+   プロファイルが残ってしまった時
+   /etc/sysconfig/network-scripts/ifcfg-xxxを削除
+   systemctl restart NetworkManager 
+
 
 tcpdump
 -------
@@ -58,6 +64,8 @@ tcpdump
 
 firewall-cmd
 ------------
+
+本体(Ruleファイル)の場所：/usr/lib/firewalld/
 
 .. code-block::
 

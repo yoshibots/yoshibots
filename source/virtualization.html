@@ -105,6 +105,9 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">MAIN</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="os.html">OS</a></li>
 </ul>
 <ul>
@@ -124,9 +127,14 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">VIRTUALIZATION</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#virtualization-index">Virtualization Index</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">仮想化方式の種類</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">用語</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#xen">Xen</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">概要</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#command">Command</a></li>
 </ul>
@@ -137,15 +145,15 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#vagrant">VAGRANT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#kubernetes">Kubernetes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Start</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#virtualbox">VirtualBox</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Start</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#hyper-v">Hyper-v</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Start</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#vmware-esxi">VMware ESXi</a></li>
@@ -161,10 +169,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="other.html">OTHER</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Main:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
-<li class="toctree-l1"><a class="reference internal" href="selinux.html">SELinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link.html">Link</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
 </ul>
 
             
@@ -234,6 +243,52 @@
             
   <div class="section" id="virtualization">
 <h1>VIRTUALIZATION<a class="headerlink" href="#virtualization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="virtualization-index">
+<h2>Virtualization Index<a class="headerlink" href="#virtualization-index" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>仮想化方式の種類<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>ホストOS型</p></li>
+<li><p>ハイパーバイザ型</p></li>
+<li><p>コンテナ型</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>用語<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>仮想化において頻出の用語を下記に記載する。</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>P2V</dt><dd><p>Phisical to Virtual</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>V2V</dt><dd><p>Virtual to Virtual</p>
+</dd>
+</dl>
+</li>
+<li><p>Live migration</p></li>
+<li><p>Para-Virtualization</p></li>
+<li><p>Full Virtualization</p></li>
+<li><p>バイナリトランスレーション</p></li>
+<li><p>CPU仮想化支援機能
+CPUエミューレーション
+CPU仮想化支援機能の実装として代表的なCPUベンダーは以下のテクノロジーを提供している。
+Intel VT (Intel Virtualization Technology)
+AMD-V(AMD Virtualization)</p></li>
+<li><p>CPU Flags(フラグ)
+CPUがサポートしている機能を示すフラグ（目印）のことであり、Linuxシステムでは/proc/cpuinfoファイルに情報が格納されている。
+CPUの仮想化支援機能が利用できる場合は/proc/cpuinfoファイルのflags行に「vmx」(Intelの場合)もしくは「svm」(AMDの場合)という文字列が記述されます。</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>CPUフラグはあくまでもCPUがその機能をサポートしているかどうかを表すだけのものであり、BIOSレベルでその機能が有効化されていることを保証するものではありません。</p>
+</div>
+<ul class="simple">
+<li><p>リングプロテクション</p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="docker">
 <h2>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
@@ -250,8 +305,8 @@
 </div>
 <div class="section" id="xen">
 <h2>Xen<a class="headerlink" href="#xen" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>概要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>概要<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Xenはケンブリッジ大学の研究所で開発された仮想化ソフトウェア。</p>
 <p>オープンソースのXenは「Xen Project」によって開発提供されていますが、同時にCitrix社によってエンタープライズ向けのXenServerとしても提供されている。</p>
 </div>
@@ -323,20 +378,20 @@
 </div>
 <div class="section" id="kubernetes">
 <h2>Kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>Start<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Start<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="virtualbox">
 <h2>VirtualBox<a class="headerlink" href="#virtualbox" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>Start<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Start<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="hyper-v">
 <h2>Hyper-v<a class="headerlink" href="#hyper-v" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>Start<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>Start<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="vmware-esxi">

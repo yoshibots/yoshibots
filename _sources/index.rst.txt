@@ -6,8 +6,11 @@
 Welcome to Blue Field
 ======================
 
+
 .. toctree::
    :maxdepth: 2
+
+   /source/main
 
 .. toctree::
    :maxdepth: 2
@@ -61,10 +64,13 @@ Welcome to Blue Field
 
 .. toctree::
    :maxdepth: 2
-   :caption: Main:
-   
-   /source/main
-   /source/selinux
+
+   /source/link
+
+.. toctree::
+   :maxdepth: 2
+
+   /source/security
 
 Indices and tables
 ==================

@@ -1,0 +1,21 @@
+=======
+Github
+=======
+
+
+
+参考
+-----
+
+
+GitHub Pagesで普通の静的ホスティングをしたいときは .nojekyll ファイルを置く
+https://qiita.com/sky_y/items/b96ae52c90457bcd7846
+
+
+sphinx でドキュメント作成からWeb公開までをやってみた
+https://qiita.com/kinpira/items/505bccacb2fba89c0ff0
+
+
+GitHub Pages で Jekyll を使わずに静的コンテンツを公開する
+https://yohei-a.hatenablog.jp/entry/20210103/1609630586
+

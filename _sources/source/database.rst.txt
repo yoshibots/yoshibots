@@ -9,3 +9,4 @@ DATABASE
 .. include:: ./database/mongo.rst
 .. include:: ./database/mysql.rst
 .. include:: ./database/postgresql.rst
+.. include:: ./database/cassandra.rst

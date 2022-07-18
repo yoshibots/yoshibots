@@ -36,6 +36,11 @@ Set Options
    指定したファイルをすべて開いてVimを起動
 
 
+.. code-block::
+
+   :sort    # 並び替え
+   :sort -i # 大文字/小文字を区別しない
+ 
 :
 ==
 

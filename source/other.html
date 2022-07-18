@@ -43,7 +43,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="main" href="main.html" />
+    <link rel="next" title="Link" href="link.html" />
     <link rel="prev" title="TEXTEDITOR" href="texteditor.html" /> 
 </head>
 
@@ -105,6 +105,9 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">MAIN</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="os.html">OS</a></li>
 </ul>
 <ul>
@@ -154,13 +157,36 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#github">Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kernel">Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selinux">SELinux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id34">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#package">Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#semange-command">semange command</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id35">基本形</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ref">Ref</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ssh">sshの…</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#http">http</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Main:</span></p>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#unix">UNIX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sshd">sshd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autossh">autossh</a></li>
+</ul>
+</li>
+</ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
-<li class="toctree-l1"><a class="reference internal" href="selinux.html">SELinux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link.html">Link</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
 </ul>
 
             
@@ -374,6 +400,169 @@ RateLimitBurst=1000</p>
 </div>
 </div>
 </div>
+<div class="section" id="github">
+<h2>Github<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p>GitHub Pagesで普通の静的ホスティングをしたいときは .nojekyll ファイルを置く
+<a class="reference external" href="https://qiita.com/sky_y/items/b96ae52c90457bcd7846">https://qiita.com/sky_y/items/b96ae52c90457bcd7846</a></p>
+<p>sphinx でドキュメント作成からWeb公開までをやってみた
+<a class="reference external" href="https://qiita.com/kinpira/items/505bccacb2fba89c0ff0">https://qiita.com/kinpira/items/505bccacb2fba89c0ff0</a></p>
+<p>GitHub Pages で Jekyll を使わずに静的コンテンツを公開する
+<a class="reference external" href="https://yohei-a.hatenablog.jp/entry/20210103/1609630586">https://yohei-a.hatenablog.jp/entry/20210103/1609630586</a></p>
+</div>
+<div class="section" id="kernel">
+<h2>Kernel<a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h2>
+<p>Package
+<a href="#id6"><span class="problematic" id="id7">|</span></a>_kmod / module-init-tools(old)
+<a href="#id8"><span class="problematic" id="id9">|</span></a>_depmod
+<a href="#id10"><span class="problematic" id="id11">|</span></a>_モジュールの依存関係の調査と依存関係データベースファイルの更新
+<a href="#id12"><span class="problematic" id="id13">|</span></a>_insmod
+<a href="#id14"><span class="problematic" id="id15">|</span></a>_モジュールの組み込み
+<a href="#id16"><span class="problematic" id="id17">|</span></a>_lsmod
+<a href="#id18"><span class="problematic" id="id19">|</span></a>_組み込まれているモジュール情報の一覧表示
+<a href="#id20"><span class="problematic" id="id21">|</span></a>_modinfo
+<a href="#id22"><span class="problematic" id="id23">|</span></a>_モジュール情報の一覧表示
+<a href="#id24"><span class="problematic" id="id25">|</span></a>_modprobe
+<a href="#id26"><span class="problematic" id="id27">|</span></a>_依存関係を考慮したモジュールの組み込み
+<a href="#id28"><span class="problematic" id="id29">|</span></a>_依存関係を考慮したモジュールの取り外し(-r)
+<a href="#id30"><span class="problematic" id="id31">|</span></a>_rmmod
+<a href="#id32"><span class="problematic" id="id33">|</span></a>_モジュールの取り外し</p>
+</div>
+<div class="section" id="selinux">
+<h2>SELinux<a class="headerlink" href="#selinux" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id34">
+<h3>Install<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="package">
+<h3>Package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="semange-command">
+<h4>semange command<a class="headerlink" href="#semange-command" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dnf</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">policycoreutils</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">utils</span> <span class="c1"># CentOS8,RHEL9,</span>
+<span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">policycoreutils</span><span class="o">-</span><span class="n">python</span>       <span class="c1"># CentOS7,</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id35">
+<h3>基本形<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">--</span><span class="nb">list</span> <span class="c1">#</span>
+<span class="n">semanage</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">LABELTYPE</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1">#</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>無効状態から直接有効にするとラベルが適切でないものがある場合起動しなくなってしまう場合がある。その為、下記の手順を実施して一度Permissiveで起動後に有効化する。</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ルートディレクトリに.autorelabel を作成する</span>
+<span class="n">root</span><span class="o">&gt;</span> <span class="n">touch</span> <span class="o">.</span><span class="n">autorelabel</span>
+
+<span class="c1"># Permissiveに変更して起動させる</span>
+</pre></div>
+</div>
+<p># Enforcingで起動
+&gt; vi /etc/selinux/config ——————————</p>
+<p># 参照権限の付与
+&gt; semanage fcontext -a -t httpd_sys_content_t “&lt;XXX&gt;”</p>
+<p>&gt; setsebool -P httpd_can_network_connect_db 1 # 要確認 -&gt; webserver経由でDBアクセスできる設定
+&gt; setsebool -P httpd_can_network_connect=on</p>
+<p>## よく使うコマンド————————————</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">ssh_port_t</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1"># Ex.ssh_port_t  # portの追加</span>
+<span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">TYPE_LABEL</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">&lt;</span><span class="n">PORT_NUMBER</span><span class="o">&gt;</span> <span class="c1"># portの削除</span>
+<span class="n">semanage</span> <span class="n">fcontext</span> <span class="o">-</span><span class="n">l</span>  <span class="c1"># コンテキスト定義ルールの一覧表示</span>
+<span class="n">semanage</span> <span class="n">fcontext</span> <span class="o">--</span><span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">httpd_config_t</span>  <span class="c1"># 絞り込み</span>
+
+<span class="n">seinfo</span> <span class="o">-</span><span class="n">t</span>  <span class="c1"># SELinux のタイプ(type)一覧表示</span>
+<span class="n">seinfo</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">c</span>  <span class="c1"># SELinuxのClassとPermission一覧表示</span>
+
+<span class="n">semanage</span> <span class="n">fcontext</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">e</span> <span class="o">&lt;/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">var</span><span class="o">/</span><span class="n">test_www</span><span class="o">&gt;</span>  <span class="c1"># 定義したRuleの削除</span>
+
+<span class="n">getsebool</span> <span class="o">-</span><span class="n">a</span>  <span class="c1"># grep で絞り込む getsebool -a | grep http  # 組み込みルールのステータスを確認</span>
+
+<span class="c1"># 設定状態の確認(SELinux の個別追加設定した内容を表示(ただしsemodule等で追加したモジュール情報は見れない))</span>
+ <span class="n">semanage</span> <span class="n">export</span>
+
+ <span class="n">sesearch</span> <span class="o">-</span><span class="n">A</span> <span class="o">-</span><span class="n">s</span> <span class="n">httpd_t</span> <span class="o">-</span><span class="n">b</span> <span class="n">httpd_can_network_connect_db</span> <span class="o">-</span><span class="n">p</span> <span class="n">name_connect</span>  <span class="c1"># AVCの確認</span>
+</pre></div>
+</div>
+<p># 上記で許可されているPortの確認
+&gt; seinfo –protocol=tcp –port | grep -E ‘mongod_port_t|gds_db_port_t|mssql_port_t|oracle_port_t|postgresql_port_t|mysqld_port_t’</p>
+<p>## —————————————————-</p>
+<p># Nginxのドキュメントルートを変更した時のSELinuxの設定
+SELinuxでApacheで/var/wwwから変更した先のパスも許可する
+<a class="reference external" href="https://tex2e.github.io/blog/linux/selinux-httpd-change-documentroot">https://tex2e.github.io/blog/linux/selinux-httpd-change-documentroot</a></p>
+<p>&gt; ls -dZ &lt;/var/www&gt;
+&gt; semanage fcontext -a -e &lt;/var/www&gt; &lt;/var/test_www&gt;   # /var/www=参照するLabelのdir /var/test_www=対象とするdir</p>
+<blockquote>
+<div><p>semanage fcontext -l  # Policyの確認
+restorecon -R -v &lt;/var/test_www&gt;  # restoreconコマンドで反映させる</p>
+</div></blockquote>
+<p># chcon
+chcon -u &lt;XX&gt; &lt;FILENAME&gt;
+chcon system_u:object_r:mongod_var_lib_t:s0 &lt;FILENAME&gt;</p>
+<p># SELinux関連のトラブルシュート
+* Resolving SELinux Security Exceptions
+<a class="reference external" href="https://www.nginx.com/blog/using-nginx-plus-with-selinux/">https://www.nginx.com/blog/using-nginx-plus-with-selinux/</a></p>
+<blockquote>
+<div><p>&gt; cat /var/log/audit/audit.log | grep denied</p>
+<p># 番号でGrep
+&gt;grep &lt;1415714880.156:29&gt; /var/log/audit/audit.log | audit2why</p>
+</div></blockquote>
+<div class="section" id="ref">
+<h4>Ref<a class="headerlink" href="#ref" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://www.tohoho-web.com/ex/selinux.html">とほほのSELinux入門</a></p>
+<p><a class="reference external" href="https://milestone-of-se.nesuke.com/sv-advanced/selinux/config-list-add-del/">SELinux のコンテキスト定義ルール一覧表示</a></p>
+<p><a class="reference external" href="https://dev.classmethod.jp/articles/redhat-selinx-might-block-network-connection-to-servers-from-apache-php/">RedHatでPHPからDBサーバに接続できないときはSELinuxの設定が原因かも?</a></p>
+</div>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ssh">
+<h4>sshの…<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">--</span><span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">ssh</span>  <span class="c1"># sshのLabel確認</span>
+<span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="n">ssh_port_t</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="mi">20000</span> <span class="c1"># 20000ポートにssh_port_tのラベルを設定</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="http">
+<h4>http<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">semanage</span> <span class="n">port</span> <span class="o">--</span><span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">http</span>  <span class="c1"># httpのLabel確認</span>
+<span class="n">semanage</span> <span class="n">port</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="n">http_port_t</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="mi">20000</span> <span class="c1"># 20000ポートにhttp_port_tのラベルを設定</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="unix">
+<h2>UNIX<a class="headerlink" href="#unix" title="Permalink to this headline">¶</a></h2>
+<p>UNIXには下記の２系列がある。</p>
+<ul class="simple">
+<li><p>System V系列</p></li>
+<li><p>BSD系列</p></li>
+</ul>
+<p>よく使うコマンド
+less コマンドでフィルタリングする
+&amp;/
+!</p>
+<p>履歴を残さない
+unset HISTFILE
+kill -9 $$</p>
+</div>
+<div class="section" id="sshd">
+<h2>sshd<a class="headerlink" href="#sshd" title="Permalink to this headline">¶</a></h2>
+<p>SSHProxycommand
+MaxStartup</p>
+<blockquote>
+<div><p>Ex.MaxStartups 2:80:5
+上記の設定例では、「2」つまでの接続要求を受け付け、3つを超えるそれ以降の要求を「80」％の割合で拒否し、さらに要求が増え続けて「5」つを超えると以降すべてを拒否するという意味だ。</p>
+</div></blockquote>
+<p>-o IdentitiesOnly=yes</p>
+</div>
+<div class="section" id="autossh">
+<h2>autossh<a class="headerlink" href="#autossh" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://gist.github.com/ttimasdf/ef739670ac5d627981c5695adf4c8f98">https://gist.github.com/ttimasdf/ef739670ac5d627981c5695adf4c8f98</a></p>
+</div>
 </div>
 
 
@@ -382,7 +571,7 @@ RateLimitBurst=1000</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="main.html" class="btn btn-neutral float-right" title="main" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="link.html" class="btn btn-neutral float-right" title="Link" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="texteditor.html" class="btn btn-neutral float-left" title="TEXTEDITOR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
